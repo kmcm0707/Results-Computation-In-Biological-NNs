@@ -1,0 +1,10 @@
+.obsidian
+.venv
+.trash
+
+
+__pycache__/
+data/*
+
+## Testing temp files
+results/testing
