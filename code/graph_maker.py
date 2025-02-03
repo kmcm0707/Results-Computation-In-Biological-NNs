@@ -24,7 +24,7 @@ def multi_plot_accuracy(directories, labels, window_size=20, save_dir=None, save
     for directory in directories:
         z = np.loadtxt(directory + "/acc_meta.txt")
         z = comp_moving_avg(np.nan_to_num(z), window_size)
-        z = z[0:200]
+        z = z[0:800]
         average = average + [z]
     smallest = min([len(x) for x in average])
     average = [x[:smallest] for x in average]
@@ -59,7 +59,7 @@ def multi_plot_loss(directories, labels, window_size=20, save_dir=None, save_nam
     average = []
     for directory in directories:
         z = np.loadtxt(directory + "/loss_meta.txt")
-        z = z[0:200]
+        z = z[0:800]
         z = comp_moving_avg(np.nan_to_num(z), window_size)
 
         average = average + [z]
@@ -88,7 +88,7 @@ def peak_meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_nam
     average = []
     for directory in directories:
         z = np.loadtxt(directory + "/acc_meta.txt")
-        z = z[0:200]
+        z = z[0:800]
         z = comp_moving_avg(np.nan_to_num(z), window_size)
 
         average = average + [z]
@@ -111,32 +111,35 @@ def meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_name="me
     plt.rc('font', family='serif', size=14)
     M = len(directories)
     xx = np.linspace(0, M, M)
-    plt.figure(figsize=(10, 5))
+    plt.figure(figsize=(15, 5))
     #sorted_indices = np.argsort(mean_player_skills)
     #sorted_names = W[sorted_indices]
 
+    colors = ['red', 'blue', 'green', 'purple', 'orange', 'black', 'brown', 'pink', 'gray', 'cyan', 'magenta', 'yellow']
     average = []
+    index = 0
     for directory in directories:
         z = np.loadtxt(directory + "/acc_meta.txt")
-        z = z[inital_cutoff:final_cutoff]
+        if index == 0:
+            z = z[400:500]
+        else:
+            z = z[inital_cutoff:final_cutoff]
+        print(z)
+        print(index)
+        print(directory)
         z = comp_moving_avg(np.nan_to_num(z), window_size)
-
+        index += 1
         average = average + [z]
+
     average = np.array(average)
     average_x = np.mean(average, axis=1)
     std_dev = np.std(average, axis=1)
 
-    plt.scatter(xx[0], average_x[0], color='blue', s=200, marker='x', label="Shervani Tabar")
-    plt.scatter(xx[1], average_x[1], color='orange', s=200, marker='x', label="2 Chemical Per Neuron Bias RCN")
-    plt.scatter(xx[2], average_x[2], color='green', s=200, marker='x', label="3 Chemical Per Neuron Bias RCN")
-    plt.scatter(xx[3], average_x[3], color='red', s=200, marker='x', label="5 Chemical Per Neuron Bias RCN")
-    #plt.scatter(xx, average_x, color='red', s=200, marker='x')
-    plt.ylim([np.min(average_x - std_dev) - 0.05, np.max(average_x + std_dev) + 0.05])
     print(average_x, std_dev)
-    plt.errorbar(xx[0], average_x[0], yerr=std_dev[0], color='blue', capsize=2, elinewidth=2, capthick=2, fmt='x')
-    plt.errorbar(xx[1], average_x[1], yerr=std_dev[1], color='orange', capsize=2, elinewidth=2, capthick=2, fmt='x')
-    plt.errorbar(xx[2], average_x[2], yerr=std_dev[2], color='green', capsize=2, elinewidth=2, capthick=2, fmt='x')
-    plt.errorbar(xx[3], average_x[3], yerr=std_dev[3],color='red', capsize=2, elinewidth=2, capthick=2, fmt='x')
+
+    for i in range(len(directories)):
+        plt.scatter(xx[i], average_x[i], s=200, marker='x', label=labels[i] + " mean={:.2f}".format(average_x[i]), c=colors[i])
+        plt.errorbar(xx[i], average_x[i], yerr=std_dev[i], capsize=2, elinewidth=2, capthick=2, fmt='x', c=colors[i])
     #plt.errorbar(xx, average_x, yerr=std_dev, color='red', capsize=2, elinewidth=2, capthick=2, fmt='x')
     plt.xticks(np.linspace(0, M, M), labels=labels)
     plt.xlabel('Model')
@@ -353,16 +356,45 @@ if __name__ == "__main__":
     mode_3_results = [old_rosenbaum, mode_3]
     label = ["Shervani Tabar", "momentum-RCN"]
 
-    
-    multi_plot_accuracy(mode_3_results, label, window_size=20, save_dir=save_dir, save_name="mode3.png")
-    #peak_meta_accuracy_scatter_plot(mode_2_bias_results, label, save_dir=save_dir, save_name="mode_3_s.png")
-    #meta_accuracy_scatter_plot(mode_2_bias_results, label, save_dir=save_dir, save_name="bias.png", inital_cutoff=160, final_cutoff=200, window_size=10)
-    #multi_plot_loss(mode_2_bias_results, label, window_size=20, save_dir=save_dir, save_name="bias_loss.png")
+    more_mode_3 = "results/mode_3_h_zero/0"
+    more_mode_3_results = os.listdir(more_mode_3)
+    mode_3_results = [old_rosenbaum] + [more_mode_3 + "/" + x for x in more_mode_3_results]
+    label = ["Shervani Tabar"] + ["h_zero chemicals={}".format(i) for i in range(1, 6)]
+    print(len(mode_3_results))
+    print(len(label))
+
+    mode_3_h_same = "results/mode_3_h_same/0"
+    mode_3_results = os.listdir(mode_3_h_same)
+    mode_3_results = [mode_3_h_same + "/" + x for x in mode_3_results]
+    mode_3_results = [old_rosenbaum] + mode_3_results
+    label = ["Shervani Tabar"] + ["h_same chemicals={}".format(i) for i in range(1, 6)]
+
+    mode_3_v_change = "results/mode_3_v_change/0"
+    mode_3_results = os.listdir(mode_3_v_change)
+    mode_3_results = [mode_3_v_change + "/" + x for x in mode_3_results]
+    mode_3_results = [old_rosenbaum] + mode_3_results
+    label = ["Shervani Tabar"] + ["v_change chemicals={}".format(i) for i in range(1, 6)]
+
+    mode_3_ind = "results/mode_3_ind/0"
+    mode_3_results = os.listdir(mode_3_ind)
+    mode_3_results = [mode_3_ind + "/" + x for x in mode_3_results][2:5] + [[mode_3_ind + "/" + x for x in mode_3_results][-1]]
+    mode_3_results = mode_3_results
+    label = ["ind chemicals={}".format(i) for i in range(2, 6)]
+    print(mode_3_results)
+    print(len(label))
+
+
+    save_prefix = "mode_3_ind_800"
+
+    multi_plot_accuracy(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + ".png")
+    peak_meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_s.png")
+    meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_sc.png", inital_cutoff=700, final_cutoff=800, window_size=20)
+    multi_plot_loss(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + "_loss.png")
     print("Done")
 
 
 
-    label = ["Shervani-Tabar"] + ["{} Chemicals".format(i) for i in range(2, 6)]
+    """label = ["Shervani-Tabar"] + ["{} Chemicals".format(i) for i in range(2, 6)]
 
     add_baselines = results_dir + "/Mode_1/baselines/0/"
     add_baselines_results = os.listdir(add_baselines)
@@ -384,7 +416,7 @@ if __name__ == "__main__":
     
     save_dir = os.getcwd() + "/graphs"
     plt.rc('font', family='serif', size=10)
-    matrix_plot(None, "Layer K 2 Matrix", save_dir=save_dir)
+    matrix_plot(None, "Layer K 2 Matrix", save_dir=save_dir)"""
 
 
 
