@@ -1,0 +1,911 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{1101675601}{inbook}{}
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill Education}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Principles of Neural Science, Fifth Edition}
+      \field{title}{Principles of Neural Science, Fifth Edition}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb accessbiomedicalscience.mhmedical.com/content.aspx?aid=1101675601
+      \endverb
+      \verb{url}
+      \verb accessbiomedicalscience.mhmedical.com/content.aspx?aid=1101675601
+      \endverb
+    \endentry
+    \entry{wang2005}{article}{}
+      \name{author}{8}{}{%
+        {{hash=1e2ac47c253e5ed5dd8c8468a7786fe5}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={John\bibnamedelima Q.},
+           giveni={J\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+        {{hash=be0818d209318234b3f0af20f6a112e2}{%
+           family={Arora},
+           familyi={A\bibinitperiod},
+           given={Anish},
+           giveni={A\bibinitperiod}}}%
+        {{hash=646d76d5238bdf80e3e4c146444ba1f3}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Lu},
+           giveni={L\bibinitperiod}}}%
+        {{hash=5e7321bffa178a79bec1400da4fcd4d7}{%
+           family={Parelkar},
+           familyi={P\bibinitperiod},
+           given={Nikhil\bibnamedelima K.},
+           giveni={N\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=adfee886d28a1ae0a9b5e08594d3ae8d}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Guochi},
+           giveni={G\bibinitperiod}}}%
+        {{hash=14c7c5995a1cc3895f04c6c1a93add55}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Xianyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=88233da92e9d511ae0130b4e45118143}{%
+           family={Choe},
+           familyi={C\bibinitperiod},
+           given={Eun\bibnamedelima Sang},
+           giveni={E\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=f86d1c506e1b0546d424c36bed7d859e}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Limin},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{745765e9517816b0f7e149e4477aa10f}
+      \strng{fullhash}{af8c89403a5102b9f83daa19aefd5b96}
+      \strng{bibnamehash}{745765e9517816b0f7e149e4477aa10f}
+      \strng{authorbibnamehash}{745765e9517816b0f7e149e4477aa10f}
+      \strng{authornamehash}{745765e9517816b0f7e149e4477aa10f}
+      \strng{authorfullhash}{af8c89403a5102b9f83daa19aefd5b96}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The ionotropic {$\alpha$}-amino-3-hydroxy-5-methylisoxazole-4-propionic acid (AMPA) receptor is densely distributed in the mammalian brain and is primarily involved in mediating fast excitatory synaptic transmission. Recent studies in both heterologous expression systems and cultured neurons have shown that the AMPA receptor can be phosphorylated on their subunits (GluR1, GluR2, and GluR4). All phosphorylation sites reside at serine, threonine, or tyrosine on the intracellular C-terminal domain. Several key protein kinases, such as protein kinase A, protein kinase C, Ca2+/calmodulin-dependent protein kinase II, and tyrosine kinases (Trks; receptor or nonreceptor family Trks) are involved in the site-specific regulation of the AMPA receptor phosphorylation. Other glutamate receptors (N-methyl-d-aspartate receptors and metabotropic glutamate receptors) also regulate AMPA receptors through a protein phosphorylation mechanism. Emerging evidence shows that as a rapid and short-term mechanism, the dynamic protein phosphorylation directly modulates the electrophysiological, morphological (externalization and internalization trafficking and clustering), and biochemical (synthesis and subunit composition) properties of the AMPA receptor, as well as protein-protein interactions between the AMPA receptor subunits and various intracellular interacting proteins. These modulations underlie the major molecular mechanisms that ultimately affect many forms of synaptic plasticity.}
+      \field{issn}{1559-1182}
+      \field{journaltitle}{Molecular Neurobiology}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{3}
+      \field{title}{Phosphorylation of {{AMPA}} Receptors}
+      \field{urlday}{19}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{volume}{32}
+      \field{year}{2005}
+      \field{urldateera}{ce}
+      \field{pages}{237\bibrangedash 249}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1385/MN:32:3:237
+      \endverb
+      \verb{file}
+      \verb C:\Users\kmc07\Zotero\storage\4IIZCCMQ\Wang et al. - 2005 - Phosphorylation of AMPA receptors.pdf
+      \endverb
+      \keyw{dopamine,GluR,Glutamate,kainate,mGluR,N-methyl-d-aspartate (NMDA),serine,striatum,tyrosine}
+    \endentry
+    \entry{chevaleyre2007}{article}{}
+      \name{author}{5}{}{%
+        {{hash=256e0f9d58882824cd8bf34194574150}{%
+           family={Chevaleyre},
+           familyi={C\bibinitperiod},
+           given={Vivien},
+           giveni={V\bibinitperiod}}}%
+        {{hash=3f77d808c444c001ff4a81c8e34a0463}{%
+           family={Heifets},
+           familyi={H\bibinitperiod},
+           given={Boris\bibnamedelima D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=0977066f443f85bf6d5c8b88b696b518}{%
+           family={Kaeser},
+           familyi={K\bibinitperiod},
+           given={Pascal\bibnamedelima S.},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=ec9b0decf2dde390b19c064593f1836b}{%
+           family={Südhof},
+           familyi={S\bibinitperiod},
+           given={Thomas\bibnamedelima C.},
+           giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=170b66b592b621cfbc7a1567d83af2e8}{%
+           family={Castillo},
+           familyi={C\bibinitperiod},
+           given={Pablo\bibnamedelima E.},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{638f1fae33482276512dc415e72129fa}
+      \strng{fullhash}{f603f0ff9c04197e451a2f8b1cde6f93}
+      \strng{bibnamehash}{638f1fae33482276512dc415e72129fa}
+      \strng{authorbibnamehash}{638f1fae33482276512dc415e72129fa}
+      \strng{authornamehash}{638f1fae33482276512dc415e72129fa}
+      \strng{authorfullhash}{f603f0ff9c04197e451a2f8b1cde6f93}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Endocannabinoids (eCBs) have emerged as key activity-dependent signals that, by activating presynaptic cannabinoid receptors (i.e., CB1) coupled to G(i/o) protein, can mediate short-term and long-term synaptic depression (LTD). While the presynaptic mechanisms underlying eCB-dependent short-term depression have been identified, the molecular events linking CB1 receptors to LTD are unknown. Here we show in the hippocampus that long-term, but not short-term, eCB-dependent depression of inhibitory transmission requires presynaptic cAMP/PKA signaling. We further identify the active zone protein RIM1alpha as a key mediator of both CB1 receptor effects on the release machinery and eCB-dependent LTD in the hippocampus. Moreover, we show that eCB-dependent LTD in the amygdala and hippocampus shares major mechanistic features. These findings reveal the signaling pathway by which CB1 receptors mediate long-term effects of eCBs in two crucial brain structures. Furthermore, our results highlight a conserved mechanism of presynaptic plasticity in the brain.}
+      \field{issn}{0896-6273}
+      \field{journaltitle}{Neuron}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{5}
+      \field{title}{Endocannabinoid-Mediated Long-Term Plasticity Requires {{cAMP}}/{{PKA}} Signaling and {{RIM1alpha}}}
+      \field{volume}{54}
+      \field{year}{2007}
+      \field{pages}{801\bibrangedash 812}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.neuron.2007.05.020
+      \endverb
+      \verb{file}
+      \verb C:\Users\kmc07\Zotero\storage\UJV53MQP\Chevaleyre et al. - 2007 - Endocannabinoid-mediated long-term plasticity requires cAMPPKA signaling and RIM1alpha.pdf
+      \endverb
+      \keyw{Amygdala,Animals,Cannabinoid Receptor Modulators,Cyclic AMP,Cyclic AMP-Dependent Protein Kinases,Endocannabinoids,GTP-Binding Proteins,Hippocampus,Long-Term Synaptic Depression,Male,Mice,Mice Inbred C57BL,Mice Knockout,Neural Inhibition,Neural Pathways,Organ Culture Techniques,Receptor Cannabinoid CB1,Signal Transduction,Synaptic Transmission}
+    \endentry
+    \entry{fusi2007}{article}{}
+      \name{author}{2}{}{%
+        {{hash=745126eacf5ac2a5014664ad9ac192b0}{%
+           family={Fusi},
+           familyi={F\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e59367c7f0053ea873bc36f74ab7b67e}{%
+           family={Abbott},
+           familyi={A\bibinitperiod},
+           given={L.\bibnamedelimi F.},
+           giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{22149977ddd27ffe9dc0bdd8f34cbccb}
+      \strng{fullhash}{22149977ddd27ffe9dc0bdd8f34cbccb}
+      \strng{bibnamehash}{22149977ddd27ffe9dc0bdd8f34cbccb}
+      \strng{authorbibnamehash}{22149977ddd27ffe9dc0bdd8f34cbccb}
+      \strng{authornamehash}{22149977ddd27ffe9dc0bdd8f34cbccb}
+      \strng{authorfullhash}{22149977ddd27ffe9dc0bdd8f34cbccb}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Memories maintained in patterns of synaptic connectivity are rapidly overwritten and destroyed by ongoing plasticity related to the storage of new memories. Short memory lifetimes arise from the bounds that must be imposed on synaptic efficacy in any realistic model. We explored whether memory performance can be improved by allowing synapses to traverse a large number of states before reaching their bounds, or by changing the way these bounds are imposed. In the case of hard bounds, memory lifetimes grow proportional to the square of the number of synaptic states, but only if potentiation and depression are precisely balanced. Improved performance can be obtained without fine tuning by imposing soft bounds, but this improvement is only linear with respect to the number of synaptic states. We explored several other possibilities and conclude that improving memory performance requires a more radical modification of the standard model of memory storage.}
+      \field{issn}{1097-6256}
+      \field{journaltitle}{Nature Neuroscience}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{4}
+      \field{title}{Limits on the Memory Storage Capacity of Bounded Synapses}
+      \field{volume}{10}
+      \field{year}{2007}
+      \field{pages}{485\bibrangedash 493}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1038/nn1859
+      \endverb
+      \verb{file}
+      \verb C:\Users\kmc07\Zotero\storage\G2SIPD84\Fusi and Abbott - 2007 - Limits on the memory storage capacity of bounded synapses.pdf
+      \endverb
+      \keyw{Animals,Humans,Memory,Models Neurological,Neuronal Plasticity,Synapses}
+    \endentry
+    \entry{benna2016}{article}{}
+      \name{author}{2}{}{%
+        {{hash=342011b1d5d7ebe2851e1a50a9671c01}{%
+           family={Benna},
+           familyi={B\bibinitperiod},
+           given={Marcus\bibnamedelima K.},
+           giveni={M\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=745126eacf5ac2a5014664ad9ac192b0}{%
+           family={Fusi},
+           familyi={F\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b0898104469b4648b472922e464c9465}
+      \strng{fullhash}{b0898104469b4648b472922e464c9465}
+      \strng{bibnamehash}{b0898104469b4648b472922e464c9465}
+      \strng{authorbibnamehash}{b0898104469b4648b472922e464c9465}
+      \strng{authornamehash}{b0898104469b4648b472922e464c9465}
+      \strng{authorfullhash}{b0898104469b4648b472922e464c9465}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Memories are stored and retained through complex, coupled processes operating on multiple timescales. To understand the computational principles behind these intricate networks of interactions, we construct a broad class of synaptic models that efficiently harness biological complexity to preserve numerous memories by protecting them against the adverse effects of overwriting. The memory capacity scales almost linearly with the number of synapses, which is a substantial improvement over the square root scaling of previous models. This was achieved by combining multiple dynamical processes that initially store memories in fast variables and then progressively transfer them to slower variables. Notably, the interactions between fast and slow variables are bidirectional. The proposed models are robust to parameter perturbations and can explain several properties of biological memory, including delayed expression of synaptic modifications, metaplasticity, and spacing effects.}
+      \field{issn}{1546-1726}
+      \field{journaltitle}{Nature Neuroscience}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{Computational Principles of Synaptic Memory Consolidation}
+      \field{volume}{19}
+      \field{year}{2016}
+      \field{pages}{1697\bibrangedash 1706}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1038/nn.4401
+      \endverb
+      \verb{file}
+      \verb C:\Users\kmc07\Zotero\storage\DJIUDPI3\Benna and Fusi - 2016 - Computational principles of synaptic memory consolidation.pdf
+      \endverb
+      \keyw{Animals,Computer Simulation,Consolidation,Long-term memory,Memory,Memory Consolidation,Models Neurological,Nerve Net,Neuronal Plasticity,Neurons,Synapses}
+    \endentry
+    \entry{lv2024}{misc}{}
+      \name{author}{19}{}{%
+        {{hash=9d9d5e313684da80a0c7b984a8e34309}{%
+           family={Lv},
+           familyi={L\bibinitperiod},
+           given={Changze},
+           giveni={C\bibinitperiod}}}%
+        {{hash=c5dc1266856fa885b84395d6067d90e9}{%
+           family={Gu},
+           familyi={G\bibinitperiod},
+           given={Yufei},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=e2a38e3a8d701577b3c49c5c14ed5de5}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zhengkang},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=4ad5e908c277b3e173c50030c2e1783d}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Zhibo},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=73a330faaad926584d1fd300b262919d}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yixin},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=7ed833e1dfe1d26d742b5ee72ffd744b}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Feiran},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b6f85784b1d0a2a8aa43d3831a89b43d}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Tianyuan},
+           giveni={T\bibinitperiod}}}%
+        {{hash=502c5bf131ed4b1c9062fb23d6747479}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhenghua},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=3dbfdac07644aa1518f24d703118a364}{%
+           family={Yin},
+           familyi={Y\bibinitperiod},
+           given={Ruicheng},
+           giveni={R\bibinitperiod}}}%
+        {{hash=added28d08b5b6bcaff5eea166ffd7aa}{%
+           family={Shang},
+           familyi={S\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=7895bb7ef6c6622b6cc875842d91d255}{%
+           family={Zhong},
+           familyi={Z\bibinitperiod},
+           given={Siqi},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c55febcdb36e6b15ef219efde054401b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xiaohua},
+           giveni={X\bibinitperiod}}}%
+        {{hash=d81fa9ae619471ec79a5a578439bcb29}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Muling},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7bdf67217be3baba5d382192e1aaa420}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Wenhao},
+           giveni={W\bibinitperiod}}}%
+        {{hash=c0c705aeae46bd1ffb20d0ef3bed0555}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Tianlong},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c345ff4359b436d897e9129fd149edf4}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Jianhao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=284b0627b3f9704c7549d65541878533}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Cenyuan},
+           giveni={C\bibinitperiod}}}%
+        {{hash=5bb2404520f9019a94ad5204c4ac9c65}{%
+           family={Ling},
+           familyi={L\bibinitperiod},
+           given={Zixuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=960deaf1c28d838494639cd2ab3cd411}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Xiaoqing},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{b637ec76a8745dd7d48b87166e29919f}
+      \strng{fullhash}{eea4297969c97770e882f4d7d39b50f1}
+      \strng{bibnamehash}{b637ec76a8745dd7d48b87166e29919f}
+      \strng{authorbibnamehash}{b637ec76a8745dd7d48b87166e29919f}
+      \strng{authornamehash}{b637ec76a8745dd7d48b87166e29919f}
+      \strng{authorfullhash}{eea4297969c97770e882f4d7d39b50f1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Backpropagation is a cornerstone algorithm in training neural networks for supervised learning, which uses a gradient descent method to update network weights by minimizing the discrepancy between actual and desired outputs. Despite its pivotal role in propelling deep learning advancements, the biological plausibility of backpropagation is questioned due to its requirements for weight symmetry, global error computation, and dual-phase training. To address this long-standing challenge, many studies have endeavored to devise biologically plausible training algorithms. However, a fully biologically plausible algorithm for training multilayer neural networks remains elusive, and interpretations of biological plausibility vary among researchers. In this study, we establish criteria for biological plausibility that a desirable learning algorithm should meet. Using these criteria, we evaluate a range of existing algorithms considered to be biologically plausible, including Hebbian learning, spike-timing-dependent plasticity, feedback alignment, target propagation, predictive coding, forward-forward algorithm, perturbation learning, local losses, and energy-based learning. Additionally, we empirically evaluate these algorithms across diverse network architectures and datasets. We compare the feature representations learned by these algorithms with brain activity recorded by non-invasive devices under identical stimuli, aiming to identify which algorithm can most accurately replicate brain activity patterns. We are hopeful that this study could inspire the development of new biologically plausible algorithms for training multilayer networks, thereby fostering progress in both the fields of neuroscience and machine learning.}
+      \field{eprintclass}{cs}
+      \field{eprinttype}{arXiv}
+      \field{month}{6}
+      \field{number}{arXiv:2406.16062}
+      \field{shorttitle}{Towards {{Biologically Plausible Computing}}}
+      \field{title}{Towards {{Biologically Plausible Computing}}: {{A Comprehensive Comparison}}}
+      \field{urlday}{19}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2406.16062
+      \endverb
+      \verb{eprint}
+      \verb 2406.16062
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\kmc07\\Zotero\\storage\\S4NZ7V4Z\\Lv et al. - 2024 - Towards Biologically Plausible Computing A Comprehensive Comparison.pdf;C\:\\Users\\kmc07\\Zotero\\storage\\JHIHBCIU\\2406.html
+      \endverb
+      \keyw{Computer Science - Neural and Evolutionary Computing}
+    \endentry
+    \entry{richards2019}{article}{}
+      \name{author}{32}{}{%
+        {{hash=b3deccad2d9db3529c4e92f84e93ad7d}{%
+           family={Richards},
+           familyi={R\bibinitperiod},
+           given={Blake\bibnamedelima A.},
+           giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=2a321a868e44d49baf52b5e2d816fb71}{%
+           family={Lillicrap},
+           familyi={L\bibinitperiod},
+           given={Timothy\bibnamedelima P.},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=740a5543a7c18355f9c0b337f002863a}{%
+           family={Beaudoin},
+           familyi={B\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9e7da25f8bbab1f942bbdedf221c9970}{%
+           family={Bogacz},
+           familyi={B\bibinitperiod},
+           given={Rafal},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7af734641c011be0bb972958714bbc48}{%
+           family={Christensen},
+           familyi={C\bibinitperiod},
+           given={Amelia},
+           giveni={A\bibinitperiod}}}%
+        {{hash=326600b0ad340d8e0cd5df377b62e046}{%
+           family={Clopath},
+           familyi={C\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=807c6363ddb9851189fb158464af7d34}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={Rui\bibnamedelima Ponte},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=715264aa4968062897c2c10b5d86e2c7}{%
+           family={{de Berker}},
+           familyi={d\bibinitperiod},
+           given={Archy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=05b3e391388084df874ede60f2210c12}{%
+           family={Ganguli},
+           familyi={G\bibinitperiod},
+           given={Surya},
+           giveni={S\bibinitperiod}}}%
+        {{hash=73632113359c5cd1bf0be349a7719731}{%
+           family={Gillon},
+           familyi={G\bibinitperiod},
+           given={Colleen\bibnamedelima J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6a1d86e250a782086160211ed8814f06}{%
+           family={Hafner},
+           familyi={H\bibinitperiod},
+           given={Danijar},
+           giveni={D\bibinitperiod}}}%
+        {{hash=b9ca59819b61e8e84841244f1ffbee0e}{%
+           family={Kepecs},
+           familyi={K\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d994ee9a00ec4dcc000b2c91ac22ede1}{%
+           family={Kriegeskorte},
+           familyi={K\bibinitperiod},
+           given={Nikolaus},
+           giveni={N\bibinitperiod}}}%
+        {{hash=bd9d78766c0aa665cc3cc38f01890f7a}{%
+           family={Latham},
+           familyi={L\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=fac2f985bbcd3d10fc69f3bf831a63ee}{%
+           family={Lindsay},
+           familyi={L\bibinitperiod},
+           given={Grace\bibnamedelima W.},
+           giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=bc35cde22fce4bb1b0a0b468989cb8b3}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Ken},
+           giveni={K\bibinitperiod}}}%
+        {{hash=806e000546180a087378a2d3beba9c69}{%
+           family={Naud},
+           familyi={N\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=91e65d591d304495ce16791511158fed}{%
+           family={Pack},
+           familyi={P\bibinitperiod},
+           given={Christopher\bibnamedelima C.},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=a38c74ddce41df9adb233108237ee9f5}{%
+           family={Poirazi},
+           familyi={P\bibinitperiod},
+           given={Panayiota},
+           giveni={P\bibinitperiod}}}%
+        {{hash=b9ced998b54a0fc50de3b3769bd0de75}{%
+           family={Roelfsema},
+           familyi={R\bibinitperiod},
+           given={Pieter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=93b01c8309106e3eedef54170c5cb659}{%
+           family={Sacramento},
+           familyi={S\bibinitperiod},
+           given={João},
+           giveni={J\bibinitperiod}}}%
+        {{hash=628311f82785c7d3fadf7482ea821c44}{%
+           family={Saxe},
+           familyi={S\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=71a2c842ae69367d35c7fcd4495a2515}{%
+           family={Scellier},
+           familyi={S\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=215b9ae49c7fc3aad6df9c85bc630ad1}{%
+           family={Schapiro},
+           familyi={S\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d55998a0b1cd9924bd62681605c1c3fe}{%
+           family={Senn},
+           familyi={S\bibinitperiod},
+           given={Walter},
+           giveni={W\bibinitperiod}}}%
+        {{hash=f96594cc1d20df4a987bf8b9770d1ef0}{%
+           family={Wayne},
+           familyi={W\bibinitperiod},
+           given={Greg},
+           giveni={G\bibinitperiod}}}%
+        {{hash=2c725593104aefef39ea0f27870fe954}{%
+           family={Yamins},
+           familyi={Y\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=66d087faecbe3130433c5e4462dde623}{%
+           family={Zenke},
+           familyi={Z\bibinitperiod},
+           given={Friedemann},
+           giveni={F\bibinitperiod}}}%
+        {{hash=30c6d7b01af3844ed000d21b2697ee4b}{%
+           family={Zylberberg},
+           familyi={Z\bibinitperiod},
+           given={Joel},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d3fd93f976395829a4d6c3557fdef344}{%
+           family={Therien},
+           familyi={T\bibinitperiod},
+           given={Denis},
+           giveni={D\bibinitperiod}}}%
+        {{hash=bc19386e95fe00742c37788c7d0eab45}{%
+           family={Kording},
+           familyi={K\bibinitperiod},
+           given={Konrad\bibnamedelima P.},
+           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{ba724a34ff8fe553966dcde447a86e63}
+      \strng{fullhash}{d270328fd5736d55ab0d819b0694bba3}
+      \strng{bibnamehash}{ba724a34ff8fe553966dcde447a86e63}
+      \strng{authorbibnamehash}{ba724a34ff8fe553966dcde447a86e63}
+      \strng{authornamehash}{ba724a34ff8fe553966dcde447a86e63}
+      \strng{authorfullhash}{d270328fd5736d55ab0d819b0694bba3}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Systems neuroscience seeks explanations for how the brain implements a wide variety of perceptual, cognitive and motor tasks. Conversely, artificial intelligence attempts to design computational systems based on the tasks they will have to solve. In the case of artificial neural networks, the three components specified by design are the objective functions, the learning rules, and architectures. With the growing success of deep learning, which utilizes brain-inspired architectures, these three designed components have increasingly become central to how we model, engineer and optimize complex artificial learning systems. Here we argue that a greater focus on these components would also benefit systems neuroscience. We give examples of how this optimization-based framework can drive theoretical and experimental progress in neuroscience. We contend that this principled perspective on systems neuroscience will help to generate more rapid progress.}
+      \field{issn}{1097-6256}
+      \field{journaltitle}{Nature neuroscience}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{A Deep Learning Framework for Neuroscience}
+      \field{urlday}{10}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{volume}{22}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{1761\bibrangedash 1770}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1038/s41593-019-0520-2
+      \endverb
+      \verb{file}
+      \verb C:\Users\kmc07\Zotero\storage\AZHYBG6B\Richards et al. - 2019 - A deep learning framework for neuroscience.pdf
+      \endverb
+    \endentry
+    \entry{szu1987}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7a6bd7fa682660fcd1b0b0bac97924f9}{%
+           family={Szu},
+           familyi={S\bibinitperiod},
+           given={Harold},
+           giveni={H\bibinitperiod}}}%
+        {{hash=cb5cfb5852401e182ac95fc21a444c0a}{%
+           family={Hartley},
+           familyi={H\bibinitperiod},
+           given={Ralph},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e64d9808e768db8ed6eaca2ba6b53bd6}
+      \strng{fullhash}{e64d9808e768db8ed6eaca2ba6b53bd6}
+      \strng{bibnamehash}{e64d9808e768db8ed6eaca2ba6b53bd6}
+      \strng{authorbibnamehash}{e64d9808e768db8ed6eaca2ba6b53bd6}
+      \strng{authornamehash}{e64d9808e768db8ed6eaca2ba6b53bd6}
+      \strng{authorfullhash}{e64d9808e768db8ed6eaca2ba6b53bd6}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Simulated annealing is a stochastic strategy for searching the ground state. A fast simulated annealing (FSA) is a semi-local search and consists of occasional long jumps. The cooling schedule of the FSA algorithm is inversely linear in time which is fast compared with the classical simulated annealing (CSA) which is strictly a local search and requires the cooling schedule to be inversely proportional to the logarithmic function of time. A general D-dimensional Cauchy probability for generating the state is given. Proofs for both FSA and CSA are sketched. A double potential well is used to numerically illustrate both schemes.}
+      \field{issn}{0375-9601}
+      \field{journaltitle}{Physics Letters A}
+      \field{month}{6}
+      \field{number}{3}
+      \field{title}{Fast Simulated Annealing}
+      \field{urlday}{19}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{volume}{122}
+      \field{year}{1987}
+      \field{urldateera}{ce}
+      \field{pages}{157\bibrangedash 162}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/0375-9601(87)90796-1
+      \endverb
+      \verb{file}
+      \verb C:\Users\kmc07\Zotero\storage\NGZ7XIMY\0375960187907961.html
+      \endverb
+    \endentry
+    \entry{lillicrap2016a}{article}{}
+      \name{author}{4}{}{%
+        {{hash=2a321a868e44d49baf52b5e2d816fb71}{%
+           family={Lillicrap},
+           familyi={L\bibinitperiod},
+           given={Timothy\bibnamedelima P.},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=cc9b655893ed09be9c96f4ecb85f540f}{%
+           family={Cownden},
+           familyi={C\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2044a89d8371055636750a329a0483ff}{%
+           family={Tweed},
+           familyi={T\bibinitperiod},
+           given={Douglas\bibnamedelima B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=586fe5fa9ffc368402426a66d1ee6ed3}{%
+           family={Akerman},
+           familyi={A\bibinitperiod},
+           given={Colin\bibnamedelima J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{e9929f8db9dd2c08064f17b4d9a7c551}
+      \strng{fullhash}{73f3069c5aa1539be326ca08bba944c5}
+      \strng{bibnamehash}{e9929f8db9dd2c08064f17b4d9a7c551}
+      \strng{authorbibnamehash}{e9929f8db9dd2c08064f17b4d9a7c551}
+      \strng{authornamehash}{e9929f8db9dd2c08064f17b4d9a7c551}
+      \strng{authorfullhash}{73f3069c5aa1539be326ca08bba944c5}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The brain processes information through multiple layers of neurons. This deep architecture is representationally powerful, but complicates learning because it is difficult to identify the responsible neurons when a mistake is made. In machine learning, the backpropagation algorithm assigns blame by multiplying error signals with all the synaptic weights on each neuron's axon and further downstream. However, this involves a precise, symmetric backward connectivity pattern, which is thought to be impossible in the brain. Here we demonstrate that this strong architectural constraint is not required for effective error propagation. We present a surprisingly simple mechanism that assigns blame by multiplying errors by even random synaptic weights. This mechanism can transmit teaching signals across multiple layers of neurons and performs as effectively as backpropagation on a variety of tasks. Our results help reopen questions about how the brain could use error signals and dispel long-held assumptions about algorithmic constraints on learning.}
+      \field{issn}{2041-1723}
+      \field{journaltitle}{Nature Communications}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{1}
+      \field{title}{Random Synaptic Feedback Weights Support Error Backpropagation for Deep Learning}
+      \field{urlday}{19}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{volume}{7}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{13276}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/ncomms13276
+      \endverb
+      \verb{file}
+      \verb C:\Users\kmc07\Zotero\storage\AU2TV5H4\Lillicrap et al. - 2016 - Random synaptic feedback weights support error backpropagation for deep learning.pdf
+      \endverb
+      \keyw{Learning algorithms}
+    \endentry
+    \entry{shervani-tabar2023}{article}{}
+      \name{author}{2}{}{%
+        {{hash=daa240b52cc5bd759245b81ea6c6210f}{%
+           family={{Shervani-Tabar}},
+           familyi={S\bibinitperiod},
+           given={Navid},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ed0f5db66e914b05946d2959f04125b5}{%
+           family={Rosenbaum},
+           familyi={R\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{2e9ffb134cdcc1609599b1bc1ad9496f}
+      \strng{fullhash}{2e9ffb134cdcc1609599b1bc1ad9496f}
+      \strng{bibnamehash}{2e9ffb134cdcc1609599b1bc1ad9496f}
+      \strng{authorbibnamehash}{2e9ffb134cdcc1609599b1bc1ad9496f}
+      \strng{authornamehash}{2e9ffb134cdcc1609599b1bc1ad9496f}
+      \strng{authorfullhash}{2e9ffb134cdcc1609599b1bc1ad9496f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Backpropagation is widely used to train artificial neural networks, but its relationship to synaptic plasticity in the brain is unknown. Some biological models of backpropagation rely on feedback projections that are symmetric with feedforward connections, but experiments do not corroborate the existence of such symmetric backward connectivity. Random feedback alignment offers an alternative model in which errors are propagated backward through fixed, random backward connections. This approach successfully trains shallow models, but learns slowly and does not perform well with deeper models or online learning. In this study, we develop a meta-learning approach to discover interpretable, biologically plausible plasticity rules that improve online learning performance with fixed random feedback connections. The resulting plasticity rules show improved online training of deep models in the low data regime. Our results highlight the potential of meta-learning to discover effective, interpretable learning rules satisfying biological constraints.}
+      \field{issn}{2041-1723}
+      \field{journaltitle}{Nature Communications}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{1}
+      \field{title}{Meta-Learning Biologically Plausible Plasticity Rules with Random Feedback Pathways}
+      \field{urlday}{21}
+      \field{urlmonth}{9}
+      \field{urlyear}{2024}
+      \field{volume}{14}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{1805}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41467-023-37562-1
+      \endverb
+      \verb{file}
+      \verb C:\Users\kmc07\Zotero\storage\E6MFRN9F\Shervani-Tabar and Rosenbaum - 2023 - Meta-learning biologically plausible plasticity rules with random feedback pathways.pdf
+      \endverb
+      \keyw{Computational science,Learning algorithms}
+    \endentry
+    \entry{schmidhuber1987srl}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=c3a004dc2b8b6fb4dd79c5b8c1469da7}{%
+           family={Schmidhuber},
+           familyi={S\bibinitperiod},
+           given={Jurgen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Technische Universitat Munchen, Germany}%
+      }
+      \strng{namehash}{c3a004dc2b8b6fb4dd79c5b8c1469da7}
+      \strng{fullhash}{c3a004dc2b8b6fb4dd79c5b8c1469da7}
+      \strng{bibnamehash}{c3a004dc2b8b6fb4dd79c5b8c1469da7}
+      \strng{authorbibnamehash}{c3a004dc2b8b6fb4dd79c5b8c1469da7}
+      \strng{authornamehash}{c3a004dc2b8b6fb4dd79c5b8c1469da7}
+      \strng{authorfullhash}{c3a004dc2b8b6fb4dd79c5b8c1469da7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{14 May}
+      \field{title}{Evolutionary Principles in Self-Referential Learning. On Learning now to Learn: The Meta-Meta-Meta...-Hook}
+      \field{type}{Diploma Thesis}
+      \field{year}{1987}
+      \verb{urlraw}
+      \verb http://www.idsia.ch/~juergen/diploma.html
+      \endverb
+      \verb{url}
+      \verb http://www.idsia.ch/~juergen/diploma.html
+      \endverb
+      \keyw{EURISKO,PSALM,SALM,algorithm,algorithms,associative brigade,bucket evolution,fractals genetic genetical introsepection,learning,meta,nets,neuronal programming self-reference}
+    \endentry
+    \entry{cohen2017}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=632e47c0e294f0fbd414a2b1a7898b32}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+        {{hash=2f60c8f4393827d484d302b2ad08da36}{%
+           family={Afshar},
+           familyi={A\bibinitperiod},
+           given={Saeed},
+           giveni={S\bibinitperiod}}}%
+        {{hash=41ebea77d8d9e72f4b00f85eaefd289c}{%
+           family={Tapson},
+           familyi={T\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=95e1e189289941a4add250f0a5be91c7}{%
+           family={Schaik},
+           familyi={S\bibinitperiod},
+           given={André},
+           giveni={A\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{eb5fe4b91be0ce30f1a148038f4f098d}
+      \strng{fullhash}{29d5cb5d166375a61bf91f2e79e7354a}
+      \strng{bibnamehash}{eb5fe4b91be0ce30f1a148038f4f098d}
+      \strng{authorbibnamehash}{eb5fe4b91be0ce30f1a148038f4f098d}
+      \strng{authornamehash}{eb5fe4b91be0ce30f1a148038f4f098d}
+      \strng{authorfullhash}{29d5cb5d166375a61bf91f2e79e7354a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The MNIST dataset has become a standard benchmark for learning, classification and computer vision systems. Contributing to its widespread adoption are the understandable and intuitive nature of the task, its relatively small size and storage requirements and the accessibility and ease-of-use of the database itself. The MNIST database was derived from a larger dataset known as the NIST Special Database 19 which contains digits, uppercase and lowercase handwritten letters. This paper introduces a variant of the full NIST dataset, which we have called Extended MNIST (EMNIST), which follows the same conversion paradigm used to create the MNIST dataset. The result is a set of datasets that constitute a more challenging classification tasks involving letters and digits, and that shares the same image structure and parameters as the original MNIST task, allowing for direct compatibility with all existing classifiers and systems. Benchmark results are presented along with a validation of the conversion process through the comparison of the classification results on converted NIST digits and the MNIST digits.}
+      \field{eprintclass}{cs}
+      \field{eprinttype}{arXiv}
+      \field{month}{2}
+      \field{number}{arXiv:1702.05373}
+      \field{shorttitle}{{{EMNIST}}}
+      \field{title}{{{EMNIST}}: An Extension of {{MNIST}} to Handwritten Letters}
+      \field{urlday}{20}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1702.05373
+      \endverb
+      \verb{eprint}
+      \verb 1702.05373
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\kmc07\\Zotero\\storage\\W6BD6PIW\\Cohen et al. - 2017 - EMNIST an extension of MNIST to handwritten letters.pdf;C\:\\Users\\kmc07\\Zotero\\storage\\5TYMMTP4\\1702.html
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition}
+    \endentry
+    \entry{cho2014}{misc}{}
+      \name{author}{7}{}{%
+        {{hash=3da7501a79d9346572c7fd6e41b615df}{%
+           family={Cho},
+           familyi={C\bibinitperiod},
+           given={Kyunghyun},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d27fe3f9898ba01eeca28e3bd205f9ea}{%
+           family={Merrienboer},
+           familyi={M\bibinitperiod},
+           given={Bart},
+           giveni={B\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=2adc0c92c308f233c731321d55efe58f}{%
+           family={Gulcehre},
+           familyi={G\bibinitperiod},
+           given={Caglar},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6d80adec79a13a33e73215c5f46f1605}{%
+           family={Bahdanau},
+           familyi={B\bibinitperiod},
+           given={Dzmitry},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6deedc795e51da1bc7fd6289ab321a48}{%
+           family={Bougares},
+           familyi={B\bibinitperiod},
+           given={Fethi},
+           giveni={F\bibinitperiod}}}%
+        {{hash=449689e8c1ced50f608244e3a96fe6d3}{%
+           family={Schwenk},
+           familyi={S\bibinitperiod},
+           given={Holger},
+           giveni={H\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{9b1920db887fe0d658725c1e606b61f4}
+      \strng{fullhash}{93de344d8644049cc7e61f1b9095d310}
+      \strng{bibnamehash}{9b1920db887fe0d658725c1e606b61f4}
+      \strng{authorbibnamehash}{9b1920db887fe0d658725c1e606b61f4}
+      \strng{authornamehash}{9b1920db887fe0d658725c1e606b61f4}
+      \strng{authorfullhash}{93de344d8644049cc7e61f1b9095d310}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, we propose a novel neural network model called RNN Encoder-Decoder that consists of two recurrent neural networks (RNN). One RNN encodes a sequence of symbols into a fixed-length vector representation, and the other decodes the representation into another sequence of symbols. The encoder and decoder of the proposed model are jointly trained to maximize the conditional probability of a target sequence given a source sequence. The performance of a statistical machine translation system is empirically found to improve by using the conditional probabilities of phrase pairs computed by the RNN Encoder-Decoder as an additional feature in the existing log-linear model. Qualitatively, we show that the proposed model learns a semantically and syntactically meaningful representation of linguistic phrases.}
+      \field{eprintclass}{cs}
+      \field{eprinttype}{arXiv}
+      \field{month}{9}
+      \field{number}{arXiv:1406.1078}
+      \field{title}{Learning {{Phrase Representations}} Using {{RNN Encoder-Decoder}} for {{Statistical Machine Translation}}}
+      \field{urlday}{20}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1406.1078
+      \endverb
+      \verb{eprint}
+      \verb 1406.1078
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\kmc07\\Zotero\\storage\\SKRT5PCN\\Cho et al. - 2014 - Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation.pdf;C\:\\Users\\kmc07\\Zotero\\storage\\XDLFRV6N\\1406.html
+      \endverb
+      \keyw{Computer Science - Computation and Language,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,Statistics - Machine Learning}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
