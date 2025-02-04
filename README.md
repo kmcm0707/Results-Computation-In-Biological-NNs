@@ -79,3 +79,12 @@ Equation 1: h(s+1) = yh(s) + (1/\eta) * zf(Kzh(s) + \eta * P * F(Parameter) + b)
 Equation 2: w(s) = v * h(s)
 
 Note mode 2 generalises to mode 1 basically.
+
+# Work Done:
+- mode_3_h_zero
+- mode_3_h_sa
+- mode_3_v_change
+- mode_3_ind
+- mode_3_ind_800
+- beta
+- different_y
