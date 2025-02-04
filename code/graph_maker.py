@@ -24,7 +24,7 @@ def multi_plot_accuracy(directories, labels, window_size=20, save_dir=None, save
     for directory in directories:
         z = np.loadtxt(directory + "/acc_meta.txt")
         z = comp_moving_avg(np.nan_to_num(z), window_size)
-        z = z[0:800]
+        z = z[0:450]
         average = average + [z]
     smallest = min([len(x) for x in average])
     average = [x[:smallest] for x in average]
@@ -59,7 +59,7 @@ def multi_plot_loss(directories, labels, window_size=20, save_dir=None, save_nam
     average = []
     for directory in directories:
         z = np.loadtxt(directory + "/loss_meta.txt")
-        z = z[0:800]
+        z = z[0:450]
         z = comp_moving_avg(np.nan_to_num(z), window_size)
 
         average = average + [z]
@@ -88,7 +88,7 @@ def peak_meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_nam
     average = []
     for directory in directories:
         z = np.loadtxt(directory + "/acc_meta.txt")
-        z = z[0:800]
+        z = z[0:450]
         z = comp_moving_avg(np.nan_to_num(z), window_size)
 
         average = average + [z]
@@ -117,18 +117,11 @@ def meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_name="me
 
     colors = ['red', 'blue', 'green', 'purple', 'orange', 'black', 'brown', 'pink', 'gray', 'cyan', 'magenta', 'yellow']
     average = []
-    index = 0
     for directory in directories:
         z = np.loadtxt(directory + "/acc_meta.txt")
-        if index == 0:
-            z = z[400:500]
-        else:
-            z = z[inital_cutoff:final_cutoff]
+        z = z[inital_cutoff:final_cutoff]
         print(z)
-        print(index)
-        print(directory)
         z = comp_moving_avg(np.nan_to_num(z), window_size)
-        index += 1
         average = average + [z]
 
     average = np.array(average)
@@ -380,15 +373,26 @@ if __name__ == "__main__":
     mode_3_results = [mode_3_ind + "/" + x for x in mode_3_results][2:5] + [[mode_3_ind + "/" + x for x in mode_3_results][-1]]
     mode_3_results = mode_3_results
     label = ["ind chemicals={}".format(i) for i in range(2, 6)]
+
+    different_y_0 = "results/different_y_0/0"
+    different_y_0_results = os.listdir(different_y_0)
+    different_y_0_results = [different_y_0 + "/" + x for x in different_y_0_results][-2:]
+    mode_3_results = [old_rosenbaum] + different_y_0_results
+    label = ["Shervani Tabar", "different_y 3 chems", "different_y 5 chems"]
+    
+    beta = "results/beta/0"
+    beta_results = os.listdir(beta)
+    beta_results = [beta + "/" + x for x in beta_results]
+    mode_3_results = [old_rosenbaum] + beta_results
+    label = ["Shervani Tabar"] + ["beta={}".format(str(1/(10**i))) for i in range(0, 5, 1)]
+    
+    
+    save_prefix = "beta"
+    
     print(mode_3_results)
-    print(len(label))
-
-
-    save_prefix = "mode_3_ind_800"
-
     multi_plot_accuracy(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + ".png")
     peak_meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_s.png")
-    meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_sc.png", inital_cutoff=700, final_cutoff=800, window_size=20)
+    meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_sc.png", inital_cutoff=400, final_cutoff=450, window_size=10)
     multi_plot_loss(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + "_loss.png")
     print("Done")
 
