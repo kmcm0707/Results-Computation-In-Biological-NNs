@@ -78,7 +78,9 @@ In reversed_y_z - All a little worse
 Equation 1: h(s+1) = yh(s) + (1/\eta) * zf(Kzh(s) + \eta * P * F(Parameter) + b)
 Equation 2: w(s) = v * h(s)
 
-Note mode 2 generalises to mode 1 basically.
+Note mode 2 generalizes to mode 1 basically.
+
+All results in mode 2
 
 # Work Done:
 - mode_3_h_zero

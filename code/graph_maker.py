@@ -111,7 +111,7 @@ def meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_name="me
     plt.rc('font', family='serif', size=14)
     M = len(directories)
     xx = np.linspace(0, M, M)
-    plt.figure(figsize=(20, 5))
+    plt.figure(figsize=(20, 8))
     #sorted_indices = np.argsort(mean_player_skills)
     #sorted_names = W[sorted_indices]
 
@@ -120,10 +120,7 @@ def meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_name="me
     index = 0
     for directory in directories:
         z = np.loadtxt(directory + "/acc_meta.txt")
-        if index == 2:
-            z = z[619:669]
-        else:
-            z = z[inital_cutoff:final_cutoff]
+        z = z[inital_cutoff:final_cutoff]
         z = comp_moving_avg(np.nan_to_num(z), window_size)
         average = average + [z]
         index += 1
@@ -142,7 +139,7 @@ def meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_name="me
     plt.xlabel('Model')
     plt.ylabel('Meta-Training Episode Accuracy (Average)')
     plt.title('Meta-Training Episode Accuracy (Average over {} episodes)'.format(window_size))
-    plt.legend()
+    plt.legend(loc='lower left')
     plt.grid()
     plt.savefig(save_dir + "/" + save_name, bbox_inches="tight")
 
@@ -392,13 +389,21 @@ if __name__ == "__main__":
     mode_3_results = [old_rosenbaum] + beta_results
     label = ["Shervani Tabar"] + ["beta={}".format(str(1/(10**i))) for i in range(0, 5, 1)]
     
-    schedularT0 = "results/mode_3_all/schedularT0/0"
+    """schedularT0 = "results/mode_3_all/schedularT0/0"
     schedularT0_results = os.listdir(schedularT0)
     schedularT0_results = [schedularT0 + "/" + x for x in schedularT0_results]
     mode_3_results = [old_rosenbaum] + [beta_results[2]] + schedularT0_results
-    label = ["Shervani Tabar", "beta=0.1"] + ["schedularT0={}".format([1, 5, 10, 20, 30, 40][i]) for i in range(6)]
+    label = ["Shervani Tabar", "beta=0.1"] + ["schedularT0={}".format([1, 5, 10, 20, 30, 40][i]) for i in range(6)]"""
 
-    different_y_0 = "results/different_y_0/0"
+    schedularT0_non_broken = "results/mode_3_all/schedularT0_non_broken/1"
+    schedularT0_non_broken_results = os.listdir(schedularT0_non_broken)
+    schedularT0_non_broken_results = [schedularT0_non_broken + "/" + x for x in schedularT0_non_broken_results]
+    schedularT0_non_broken_results.insert(0, schedularT0_non_broken_results[-1])
+    schedularT0_non_broken_results.pop(-1)
+    mode_3_results = [old_rosenbaum] + [beta_results[2]] + schedularT0_non_broken_results
+    label = ["Shervani Tabar", "beta=0.1"] + ["schedularT0={}".format([5, 10, 20, 30, 40][i]) for i in range(5)]
+
+    """different_y_0 = "results/different_y_0/0"
     different_y_0_results = os.listdir(different_y_0)
     different_y_0_results = [different_y_0 + "/" + x for x in different_y_0_results][-2:]
     mode_3_results = [old_rosenbaum] + different_y_0_results
@@ -436,16 +441,16 @@ if __name__ == "__main__":
     runner_different_y_ind_v_diff_results.append(temp)
     runner_different_y_ind_v_diff_results.pop(2)
     mode_3_results = runner_different_y_ind_v_diff_results
-    label = [10, 20, 30, 40, 50, 60, 80, 120]
+    label = [10, 20, 30, 40, 50, 60, 80, 120]"""
 
-    save_prefix = "runner_different_y_ind"
+    save_prefix = "schedularT0_non_broken"
 
     
     print(mode_3_results)
     multi_plot_accuracy(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + ".png")
-    #peak_meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_s.png")
-    #meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_sc.png", inital_cutoff=400, final_cutoff=450, window_size=10)
-    #multi_plot_loss(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + "_loss.png")
+    peak_meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_s.png")
+    meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_sc.png", inital_cutoff=470, final_cutoff=500, window_size=10)
+    multi_plot_loss(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + "_loss.png")
     print("Done")
 
 
