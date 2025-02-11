@@ -24,13 +24,13 @@ def multi_plot_accuracy(directories, labels, window_size=20, save_dir=None, save
     for directory in directories:
         z = np.loadtxt(directory + "/acc_meta.txt")
         z = comp_moving_avg(np.nan_to_num(z), window_size)
-        z = z[0:450]
+        z = z
         average = average + [z]
-    smallest = min([len(x) for x in average])
+    smallest = min([len(x) for x in average]) 
     average = [x[:smallest] for x in average]
     average = np.array(average)
     x = np.array(range(average.shape[1])) + int((window_size - 1) / 2)
-    print(x.shape, average.shape)
+    print(x.shape, average.shape, len(labels))
     for i in range(len(directories)):
         plt.plot(x, average[i], label="{} last={:.2f}".format(labels[i], average[i][-1]))
     plt.axhline(y=0.2, color="r", linestyle="--", label="Chance Level")
@@ -111,18 +111,22 @@ def meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_name="me
     plt.rc('font', family='serif', size=14)
     M = len(directories)
     xx = np.linspace(0, M, M)
-    plt.figure(figsize=(15, 5))
+    plt.figure(figsize=(20, 5))
     #sorted_indices = np.argsort(mean_player_skills)
     #sorted_names = W[sorted_indices]
 
     colors = ['red', 'blue', 'green', 'purple', 'orange', 'black', 'brown', 'pink', 'gray', 'cyan', 'magenta', 'yellow']
     average = []
+    index = 0
     for directory in directories:
         z = np.loadtxt(directory + "/acc_meta.txt")
-        z = z[inital_cutoff:final_cutoff]
-        print(z)
+        if index == 2:
+            z = z[619:669]
+        else:
+            z = z[inital_cutoff:final_cutoff]
         z = comp_moving_avg(np.nan_to_num(z), window_size)
         average = average + [z]
+        index += 1
 
     average = np.array(average)
     average_x = np.mean(average, axis=1)
@@ -271,8 +275,9 @@ if __name__ == "__main__":
     save_dir = os.getcwd() + "/graphs"
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
+    old_rosenbaum = results_dir + "/Baselines/rosenbaum_old/All_Enabled/2024-10-07_17-50-20_20"
 
-    mode_1_bias = results_dir + "/Mode_1/mode_1_bias"
+    """mode_1_bias = results_dir + "/Mode_1/mode_1_bias"
     individual_bias_dir = results_dir + "/individual_maybe/1"
     individual_bias_results = os.listdir(individual_bias_dir)
     
@@ -378,23 +383,72 @@ if __name__ == "__main__":
     different_y_0_results = os.listdir(different_y_0)
     different_y_0_results = [different_y_0 + "/" + x for x in different_y_0_results][-2:]
     mode_3_results = [old_rosenbaum] + different_y_0_results
-    label = ["Shervani Tabar", "different_y 3 chems", "different_y 5 chems"]
+    label = ["Shervani Tabar", "different_y 3 chems", "different_y 5 chems"]"""
     
-    beta = "results/beta/0"
+
+    beta = "results/mode_3_all/mode3_beta/0"
     beta_results = os.listdir(beta)
     beta_results = [beta + "/" + x for x in beta_results]
     mode_3_results = [old_rosenbaum] + beta_results
     label = ["Shervani Tabar"] + ["beta={}".format(str(1/(10**i))) for i in range(0, 5, 1)]
     
+    schedularT0 = "results/mode_3_all/schedularT0/0"
+    schedularT0_results = os.listdir(schedularT0)
+    schedularT0_results = [schedularT0 + "/" + x for x in schedularT0_results]
+    mode_3_results = [old_rosenbaum] + [beta_results[2]] + schedularT0_results
+    label = ["Shervani Tabar", "beta=0.1"] + ["schedularT0={}".format([1, 5, 10, 20, 30, 40][i]) for i in range(6)]
+
+    different_y_0 = "results/different_y_0/0"
+    different_y_0_results = os.listdir(different_y_0)
+    different_y_0_results = [different_y_0 + "/" + x for x in different_y_0_results][-2:]
+    mode_3_results = [old_rosenbaum] + different_y_0_results
+    label = ["Shervani Tabar", "different_y 3 chems", "different_y 5 chems"]
+
+    y0_individual_v_ind = "results/different_y_ind_v_diff_lr/0"
+    y0_individual_v_ind_results = os.listdir(y0_individual_v_ind)
+    y0_individual_v_ind_results = [y0_individual_v_ind + "/" + x for x in y0_individual_v_ind_results][-1]
+    mode_3_results = [old_rosenbaum] + [different_y_0_results[0]] + [y0_individual_v_ind_results]
+
+    label = ["Shervani Tabar", "different_y 3 chems", "layer dependent v individual"]
     
-    save_prefix = "beta"
+    
+    runner_individual_no_bias = "results_runner/runner_individual_no_bias/0"
+    runner_individual_no_bias_results = os.listdir(runner_individual_no_bias)
+    runner_individual_no_bias_results = [runner_individual_no_bias + "/" + x for x in runner_individual_no_bias_results]
+    mode_3_results = runner_individual_no_bias_results
+    label = [10, 20, 30, 40, 50, 60, 70, 80]
+
+    runner_diff_y0 = "results_runner/runner_diff_y0/0"
+    runner_diff_y0_results = os.listdir(runner_diff_y0)
+    runner_diff_y0_results = [runner_diff_y0 + "/" + x for x in runner_diff_y0_results]
+    temp = runner_diff_y0_results[1]
+    runner_diff_y0_results[1] = runner_diff_y0_results[2]
+    runner_diff_y0_results.append(temp)
+    runner_diff_y0_results.pop(2)
+    mode_3_results = runner_diff_y0_results
+    label = [10, 20, 30, 40, 50, 60, 80, 120]
+
+    runner_different_y_ind_v_diff = "results_runner/runner_different_y_ind_v_diff/0"
+    runner_different_y_ind_v_diff_results = os.listdir(runner_different_y_ind_v_diff)
+    runner_different_y_ind_v_diff_results = [runner_different_y_ind_v_diff + "/" + x for x in runner_different_y_ind_v_diff_results]
+    temp = runner_different_y_ind_v_diff_results[1]
+    runner_different_y_ind_v_diff_results[1] = runner_different_y_ind_v_diff_results[2]
+    runner_different_y_ind_v_diff_results.append(temp)
+    runner_different_y_ind_v_diff_results.pop(2)
+    mode_3_results = runner_different_y_ind_v_diff_results
+    label = [10, 20, 30, 40, 50, 60, 80, 120]
+
+    save_prefix = "runner_different_y_ind"
+
     
     print(mode_3_results)
     multi_plot_accuracy(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + ".png")
-    peak_meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_s.png")
-    meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_sc.png", inital_cutoff=400, final_cutoff=450, window_size=10)
-    multi_plot_loss(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + "_loss.png")
+    #peak_meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_s.png")
+    #meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_sc.png", inital_cutoff=400, final_cutoff=450, window_size=10)
+    #multi_plot_loss(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + "_loss.png")
     print("Done")
+
+
 
 
 
