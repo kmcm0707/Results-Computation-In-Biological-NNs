@@ -11,14 +11,20 @@ if __name__ == '__main__':
     runner_diff_y0_3_chems = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_diff_y0_3_chems\0"
     runner_individual_no_bias = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_individual_no_bias\0"
     runner_different_y_ind_v_diff_lr = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_different_y_ind_v_diff_lr\0"
-    runner_super_varied = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_super_varied\0"
+    runner_super_varied = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_super_varied\0"
     runner_y0_3_extra_long_500 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_3_extra_long_500\0"
-    runner_y0_3_extra_long800 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_3_extra_long_800\0"
+    runner_y0_3_extra_long800 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_y0_3_extra_long_800\0"
     runner_rosenbaum_50 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_rosenbaum_50\0"
     runner_rosenbaum_varied = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_rosenbaum_varied\0"
     runner_y0_4_extra_long_100 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_4_extra_long_100\0"
     runner_y0_4_extra_long_120 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_4_extra_long_120\1"
     runner_lr_5 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_lr_5\0"
+
+    runner_4_chems = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_y0_4_extra_long_200\0"
+    runner_5_chems_500_gpu = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_y0_5_extra_long_200\runner_500_epochs_gpu\0"
+    runner_5_chems_500_cpu = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_y0_5_extra_long_200\runner_500_epochs_cpu\0"
+    runner_post_train = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_y0_5_extra_long_200\runner_200_epochs_post_train_30_70\0"
+    runner_100_post_train = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_y0_5_extra_long_200\runner_100_epochs_post_train_30_70\0"
 
     runner_director = "C:\\Users\\Kyle\\Desktop\\Results-Computation-In-Biological-NNs/results_runner/runner_min_tau_testing_"
     end = ["1_1_50", "2", "3", "4", "5", "10", "20", "30", "40", "50"]
@@ -30,8 +36,8 @@ if __name__ == '__main__':
     
 
 
-    runner_folders = [runner_super_varied, runner_y0_3_extra_long800, runner_lr_5, runner_rosenbaum_varied]
-    labels = [r"$\tau_{min}=50$", r"$\tau_{min}=100$", r"$\tau_{min}=100$ New Learning Rule", "Rosenbaum"]
+    runner_folders = [runner_y0_3_extra_long800, runner_5_chems_500_gpu, runner_100_post_train, runner_post_train]
+    labels = [r"3 Chemicals $\tau_{max}=100$", r"5 Chemicals $\tau_{max}=200$", r"5 Chemicals $\tau_{max}=200$ with 100 epochs post training", r"5 Chemicals $\tau_{max}=200$ with 200 epochs post training"]
     colors = ["red", "blue", "fuchsia", "lime", "cyan", "purple", "orange", "black", "yellow", "green"]
 
     plt.rc('font', family='serif', size=14)
@@ -49,19 +55,21 @@ if __name__ == '__main__':
             average = np.mean(z, axis=0)
             #median = np.median(z, axis=0)
             all_values = np.append(all_values, average)
-        all_values = all_values
+        all_values = all_values[:19]
         x_axis = all_files_int
-        x_axis = x_axis
+        x_axis = x_axis[:19]
         plt.plot(x_axis, all_values, label=labels[index], color=colors[index])
         #plt.fill_between(x_axis, 0, all_values, alpha=0.5, facecolor=colors[index])
         plt.scatter(x_axis, all_values, color=colors[index])
+    plt.vlines(30, 0.2, 0.9, colors="black", linestyles="dashed", label="Post training region")
+    plt.vlines(70, 0.2, 0.9, colors="black", linestyles="dashed")
     plt.legend()
     plt.title("Average Accuracy Per Training Images Per Class for Meta-Trained RCNs")
     plt.xlabel("Training Images Per Class")
-    plt.xlim(0, 400)
+    plt.xlim(0, 200)
     plt.ylabel("Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/graphs/"
-    plt.savefig(save_dir + "runner_lr_5_00.png")
+    plt.savefig(save_dir + "runner_epoch_post_train.png")
     plt.show()
 
