@@ -13,7 +13,7 @@ if __name__ == '__main__':
     runner_different_y_ind_v_diff_lr = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_different_y_ind_v_diff_lr\0"
     runner_super_varied = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_super_varied\0"
     runner_y0_3_extra_long_500 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_3_extra_long_500\0"
-    runner_y0_3_extra_long800 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_y0_3_extra_long_800\0"
+    runner_y0_3_extra_long800 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_3_extra_long_800\0"
     runner_rosenbaum_50 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_rosenbaum_50\0"
     runner_rosenbaum_varied = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_rosenbaum_varied\0"
     runner_y0_4_extra_long_100 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_4_extra_long_100\0"
@@ -26,18 +26,23 @@ if __name__ == '__main__':
     runner_post_train = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_y0_5_extra_long_200\runner_200_epochs_post_train_30_70\0"
     runner_100_post_train = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_y0_5_extra_long_200\runner_100_epochs_post_train_30_70\0"
 
-    runner_director = "C:\\Users\\Kyle\\Desktop\\Results-Computation-In-Biological-NNs/results_runner/runner_min_tau_testing_"
+    """runner_director = "C:\\Users\\Kyle\\Desktop\\Results-Computation-In-Biological-NNs/results_runner/runner_min_tau_testing_"
     end = ["1_1_50", "2", "3", "4", "5", "10", "20", "30", "40", "50"]
     all_folders = []
     for i in end:
-        all_folders.append(runner_director + i + "/0")
+        all_folders.append(runner_director + i + "/0")"""
+    
+    runner_DFA_grad_500= r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_DFA_grad_test\0"
+    runner_DFA_grad= r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_DFA_grad_800\0"
+    runner_DFA = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_DFA_test\0"
+    runnner_FA_no_Grad = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_FA_No_Grad_Test\0"
 
     #print(all_folders)
     
 
 
-    runner_folders = [runner_y0_3_extra_long800, runner_5_chems_500_gpu, runner_100_post_train, runner_post_train]
-    labels = [r"3 Chemicals $\tau_{max}=100$", r"5 Chemicals $\tau_{max}=200$", r"5 Chemicals $\tau_{max}=200$ with 100 epochs post training", r"5 Chemicals $\tau_{max}=200$ with 200 epochs post training"]
+    runner_folders = [runner_y0_3_extra_long800, runnner_FA_no_Grad, runner_DFA, runner_DFA_grad, runner_rosenbaum_varied]
+    labels = [r"FA with gradient", r"FA", r"DFA", r"DFA with Gradient", r"rosenbaum"]
     colors = ["red", "blue", "fuchsia", "lime", "cyan", "purple", "orange", "black", "yellow", "green"]
 
     plt.rc('font', family='serif', size=14)
@@ -55,21 +60,21 @@ if __name__ == '__main__':
             average = np.mean(z, axis=0)
             #median = np.median(z, axis=0)
             all_values = np.append(all_values, average)
-        all_values = all_values[:19]
+        all_values = all_values
         x_axis = all_files_int
-        x_axis = x_axis[:19]
+        x_axis = x_axis
         plt.plot(x_axis, all_values, label=labels[index], color=colors[index])
         #plt.fill_between(x_axis, 0, all_values, alpha=0.5, facecolor=colors[index])
         plt.scatter(x_axis, all_values, color=colors[index])
-    plt.vlines(30, 0.2, 0.9, colors="black", linestyles="dashed", label="Post training region")
-    plt.vlines(70, 0.2, 0.9, colors="black", linestyles="dashed")
+    plt.vlines(30, 0.2, 0.9, colors="black", linestyles="dashed", label="Training region")
+    plt.vlines(150, 0.2, 0.9, colors="black", linestyles="dashed")
     plt.legend()
     plt.title("Average Accuracy Per Training Images Per Class for Meta-Trained RCNs")
     plt.xlabel("Training Images Per Class")
-    plt.xlim(0, 200)
+    plt.xlim(0, 4400)
     plt.ylabel("Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/graphs/"
-    plt.savefig(save_dir + "runner_epoch_post_train.png")
+    plt.savefig(save_dir + "DFA.png")
     plt.show()
 
