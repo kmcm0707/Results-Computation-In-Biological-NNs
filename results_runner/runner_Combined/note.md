@@ -1,0 +1,1 @@
+error = (DFA + FA) /2

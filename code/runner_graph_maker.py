@@ -37,12 +37,21 @@ if __name__ == '__main__':
     runner_DFA = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_DFA_test\0"
     runnner_FA_no_Grad = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_FA_No_Grad_Test\0"
 
+    runner_eta = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_eta\0"
+
+    runner_combined = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_Combined\0"
+    runner_combined_2 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_Combined_v3\0"
+
+    runner_rosenbaum_fashion_mnist = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_rosenbaum_fashion_mnist\0"
+    runner_3chem_fashion_mnist = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_3chem_fashion_mnist\0"
+    runner_3chem_fashion_mnist2 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_3chem_fashion_mnist2\0"
+
     #print(all_folders)
     
 
 
-    runner_folders = [runner_y0_3_extra_long800, runnner_FA_no_Grad, runner_DFA, runner_DFA_grad, runner_rosenbaum_varied]
-    labels = [r"FA with gradient", r"FA", r"DFA", r"DFA with Gradient", r"rosenbaum"]
+    runner_folders = [runner_rosenbaum_fashion_mnist, runner_3chem_fashion_mnist, runner_3chem_fashion_mnist2]
+    labels = [r"Rosenbaum Fashion MNIST", r"RCN Meta-Trained on Fashion MNIST", r"RCN Meta-Trained on EMNIST"]
     colors = ["red", "blue", "fuchsia", "lime", "cyan", "purple", "orange", "black", "yellow", "green"]
 
     plt.rc('font', family='serif', size=14)
@@ -60,21 +69,23 @@ if __name__ == '__main__':
             average = np.mean(z, axis=0)
             #median = np.median(z, axis=0)
             all_values = np.append(all_values, average)
-        all_values = all_values
+        all_values = all_values[:19]
         x_axis = all_files_int
-        x_axis = x_axis
+        x_axis = x_axis[:19]
         plt.plot(x_axis, all_values, label=labels[index], color=colors[index])
         #plt.fill_between(x_axis, 0, all_values, alpha=0.5, facecolor=colors[index])
         plt.scatter(x_axis, all_values, color=colors[index])
-    plt.vlines(30, 0.2, 0.9, colors="black", linestyles="dashed", label="Training region")
-    plt.vlines(150, 0.2, 0.9, colors="black", linestyles="dashed")
+    plt.vlines(30, 0.1, 0.9, colors="black", linestyles="dashed", label="Training region for EMNIST")
+    plt.vlines(30, 0.1, 0.9, colors="blue", linestyles="dashed", label="Training region for Fashion MNIST")
+    plt.vlines(80, 0.1, 0.9, colors="blue", linestyles="dashed")
+    plt.vlines(150, 0.1, 0.9, colors="black", linestyles="dashed")
     plt.legend()
-    plt.title("Average Accuracy Per Training Images Per Class for Meta-Trained RCNs")
+    plt.title("Average Accuracy Per Training Images Per Class for Meta-Trained RCNs on Fashion MNIST")
     plt.xlabel("Training Images Per Class")
-    plt.xlim(0, 4400)
+    plt.xlim(0, 200)
     plt.ylabel("Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/graphs/"
-    plt.savefig(save_dir + "DFA.png")
+    plt.savefig(save_dir + "fashion_mnsit.png")
     plt.show()
 
