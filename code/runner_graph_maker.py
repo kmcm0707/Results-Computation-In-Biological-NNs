@@ -32,10 +32,10 @@ if __name__ == '__main__':
     for i in end:
         all_folders.append(runner_director + i + "/0")"""
     
-    runner_DFA_grad_500= r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_DFA_grad_test\0"
-    runner_DFA_grad= r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_DFA_grad_800\0"
-    runner_DFA = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_DFA_test\0"
-    runnner_FA_no_Grad = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_FA_No_Grad_Test\0"
+    runner_DFA_grad_500= r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_4\runner_DFA_grad_test\0"
+    runner_DFA_grad= r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_4\runner_DFA_grad_800\0"
+    runner_DFA = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_4\runner_DFA_test\0"
+    runnner_FA_no_Grad = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_4\runner_FA_No_Grad_Test\0"
 
     runner_eta = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_eta\0"
 
@@ -48,9 +48,18 @@ if __name__ == '__main__':
 
     backprop = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_backprop\0"
 
+    normalised_dodge_5 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_5\runner_normalised_weight_3chem_new5a\0"
+    normalised_non_dodge_5 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_5\runner_normalised_3_chem\0"
+    normalised_5_chem = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_5\runner_normalised_weight_5_chem_800\0"
+
+    fixed_normalised = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_normalise_weight_mode_6\0"
+    fixed_normalised_feedback = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_mode6_wtih_feedback\0"
+    fixed_normalised_5_chem = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_5_chem_mode_6\0"
+    
+
     #print(all_folders)
-    runner_folders = [runner_rosenbaum_varied, backprop]
-    labels = [r"Rosenbaum", r"Backprop"]
+    runner_folders = [runner_rosenbaum_varied, backprop, runner_lr_5, normalised_non_dodge_5, fixed_normalised, fixed_normalised_5_chem]
+    labels = [r"Rosenbaum", r"Backprop", r"FA RCN", r"Normalised FA RCN", r"Normalised FA RCN and Normalised Weights", r"Normalised FA RCN and Normalised Weights 5 Chemicals"]
     colors = ["red", "blue", "fuchsia", "lime", "cyan", "purple", "orange", "black", "yellow", "green"]
 
     plt.rc('font', family='serif', size=14)
@@ -68,23 +77,23 @@ if __name__ == '__main__':
             average = np.mean(z, axis=0)
             #median = np.median(z, axis=0)
             all_values = np.append(all_values, average)
-        all_values = all_values[:19]
+        all_values = all_values
         x_axis = all_files_int
-        x_axis = x_axis[:19]
+        x_axis = x_axis
         plt.plot(x_axis, all_values, label=labels[index], color=colors[index])
         #plt.fill_between(x_axis, 0, all_values, alpha=0.5, facecolor=colors[index])
         plt.scatter(x_axis, all_values, color=colors[index])
-    plt.vlines(30, 0.1, 0.9, colors="black", linestyles="dashed", label="Training region for EMNIST")
-    plt.vlines(30, 0.1, 0.9, colors="blue", linestyles="dashed", label="Training region for Fashion MNIST")
-    plt.vlines(80, 0.1, 0.9, colors="blue", linestyles="dashed")
-    plt.vlines(150, 0.1, 0.9, colors="black", linestyles="dashed")
+    plt.vlines(30, 0.1, 0.9, colors="black", linestyles="dashed", label="Training region for Normalised RCN")
+    plt.vlines(110, 0.1, 0.9, colors="black", linestyles="dashed")
+    plt.vlines(30, 0.1, 0.9, colors="blue", linestyles="dashed", label="Training region for Normal RCN")
+    plt.vlines(150, 0.1, 0.9, colors="blue", linestyles="dashed")
     plt.legend()
-    plt.title("Average Accuracy Per Training Images Per Class for Meta-Trained RCNs on Fashion MNIST")
+    plt.title("Average Accuracy Per Training Images Per Class")
     plt.xlabel("Training Images Per Class")
-    plt.xlim(0, 200)
+    plt.xlim(0, 400)
     plt.ylabel("Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/graphs/"
-    plt.savefig(save_dir + "fashion_mnsit.png")
+    plt.savefig(save_dir + "mode_6_5_chem.png")
     plt.show()
 
