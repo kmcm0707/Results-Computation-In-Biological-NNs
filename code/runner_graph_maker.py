@@ -55,11 +55,12 @@ if __name__ == '__main__':
     fixed_normalised = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_normalise_weight_mode_6\0"
     fixed_normalised_feedback = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_mode6_wtih_feedback\0"
     fixed_normalised_5_chem = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_5_chem_mode_6\0"
+    fixed_normalised_5_chem_800 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_5_chem_mode_6_800_2\0"
     
 
     #print(all_folders)
-    runner_folders = [runner_rosenbaum_varied, backprop, runner_lr_5, normalised_non_dodge_5, fixed_normalised, fixed_normalised_5_chem]
-    labels = [r"Rosenbaum", r"Backprop", r"FA RCN", r"Normalised FA RCN", r"Normalised FA RCN and Normalised Weights", r"Normalised FA RCN and Normalised Weights 5 Chemicals"]
+    runner_folders = [runner_rosenbaum_varied, backprop, fixed_normalised, fixed_normalised_5_chem_800]
+    labels = [r"Rosenbaum", r"Backprop", r"Normalised FA RCN and Normalised Weights", r"Normalised FA RCN and Normalised Weights 5 Chemicals"]
     colors = ["red", "blue", "fuchsia", "lime", "cyan", "purple", "orange", "black", "yellow", "green"]
 
     plt.rc('font', family='serif', size=14)
@@ -90,10 +91,10 @@ if __name__ == '__main__':
     plt.legend()
     plt.title("Average Accuracy Per Training Images Per Class")
     plt.xlabel("Training Images Per Class")
-    plt.xlim(0, 400)
+    plt.xlim(0, 200)
     plt.ylabel("Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/graphs/"
-    plt.savefig(save_dir + "mode_6_5_chem.png")
+    plt.savefig(save_dir + "mode_6_5_chem_200.png")
     plt.show()
 
