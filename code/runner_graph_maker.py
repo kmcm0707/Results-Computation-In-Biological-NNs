@@ -15,10 +15,10 @@ if __name__ == '__main__':
     runner_y0_3_extra_long_500 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_3_extra_long_500\0"
     runner_y0_3_extra_long800 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_3_extra_long_800\0"
     runner_rosenbaum_50 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_rosenbaum_50\0"
-    runner_rosenbaum_varied = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_rosenbaum_varied\0"
+    runner_rosenbaum_varied = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\rosenbaum\runner_rosenbaum_varied\0"
     runner_y0_4_extra_long_100 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_4_extra_long_100\0"
     runner_y0_4_extra_long_120 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_4_extra_long_120\1"
-    runner_lr_5 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_lr_5\0"
+    runner_lr_5 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_4\runner_lr_5\0"
 
     runner_4_chems = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_y0_4_extra_long_200\0"
     runner_5_chems_500_gpu = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_y0_5_extra_long_200\runner_500_epochs_gpu\0"
@@ -46,12 +46,11 @@ if __name__ == '__main__':
     runner_3chem_fashion_mnist = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_3chem_fashion_mnist\0"
     runner_3chem_fashion_mnist2 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_3chem_fashion_mnist2\0"
 
+    backprop = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_backprop\0"
+
     #print(all_folders)
-    
-
-
-    runner_folders = [runner_rosenbaum_fashion_mnist, runner_3chem_fashion_mnist, runner_3chem_fashion_mnist2]
-    labels = [r"Rosenbaum Fashion MNIST", r"RCN Meta-Trained on Fashion MNIST", r"RCN Meta-Trained on EMNIST"]
+    runner_folders = [runner_rosenbaum_varied, backprop]
+    labels = [r"Rosenbaum", r"Backprop"]
     colors = ["red", "blue", "fuchsia", "lime", "cyan", "purple", "orange", "black", "yellow", "green"]
 
     plt.rc('font', family='serif', size=14)
