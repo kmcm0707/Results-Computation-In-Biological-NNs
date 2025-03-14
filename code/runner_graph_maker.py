@@ -59,8 +59,8 @@ if __name__ == '__main__':
     
 
     #print(all_folders)
-    runner_folders = [runner_rosenbaum_varied, backprop, fixed_normalised, fixed_normalised_5_chem_800]
-    labels = [r"Rosenbaum", r"Backprop", r"Normalised FA RCN and Normalised Weights", r"Normalised FA RCN and Normalised Weights 5 Chemicals"]
+    runner_folders = [runner_rosenbaum_varied, backprop, fixed_normalised, fixed_normalised_5_chem_800, runner_DFA_grad]
+    labels = [r"Rosenbaum", r"Backprop", r"Normalised FA RCN and Normalised Weights", r"Normalised FA RCN and Normalised Weights 5 Chemicals", r"DFA"]
     colors = ["red", "blue", "fuchsia", "lime", "cyan", "purple", "orange", "black", "yellow", "green"]
 
     plt.rc('font', family='serif', size=14)
@@ -91,10 +91,10 @@ if __name__ == '__main__':
     plt.legend()
     plt.title("Average Accuracy Per Training Images Per Class")
     plt.xlabel("Training Images Per Class")
-    plt.xlim(0, 200)
+    plt.xlim(0, 400)
     plt.ylabel("Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/graphs/"
-    plt.savefig(save_dir + "mode_6_5_chem_200.png")
+    plt.savefig(save_dir + "mode_6_5_chem_DFA_400.png")
     plt.show()
 
