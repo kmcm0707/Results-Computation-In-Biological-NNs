@@ -3,7 +3,7 @@ import re
 import numpy as np
 
 if __name__=='__main__':
-    backprop = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_backprop\0"
+    backprop = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_2_layer_and_forward\784\0"
     backprop_files = os.listdir(backprop)
     for i in backprop_files:
         directory = os.path.join(backprop, i)

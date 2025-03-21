@@ -15,7 +15,7 @@ if __name__ == '__main__':
     runner_y0_3_extra_long_500 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_3_extra_long_500\0"
     runner_y0_3_extra_long800 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_3_extra_long_800\0"
     runner_rosenbaum_50 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_rosenbaum_50\0"
-    runner_rosenbaum_varied = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\rosenbaum\runner_rosenbaum_varied\0"
+    runner_rosenbaum_varied = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\rosenbaum\runner_rosenbaum_varied\0"
     runner_y0_4_extra_long_100 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_4_extra_long_100\0"
     runner_y0_4_extra_long_120 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_y0_4_extra_long_120\1"
     runner_lr_5 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_4\runner_lr_5\0"
@@ -46,21 +46,40 @@ if __name__ == '__main__':
     runner_3chem_fashion_mnist = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_3chem_fashion_mnist\0"
     runner_3chem_fashion_mnist2 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_3chem_fashion_mnist2\0"
 
-    backprop = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\runner_backprop\0"
+    backprop = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_backprop\0"
 
     normalised_dodge_5 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_5\runner_normalised_weight_3chem_new5a\0"
     normalised_non_dodge_5 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_5\runner_normalised_3_chem\0"
     normalised_5_chem = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_5\runner_normalised_weight_5_chem_800\0"
 
-    fixed_normalised = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_normalise_weight_mode_6\0"
+    fixed_normalised = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_weight_mode_6\0" # 3 chem
     fixed_normalised_feedback = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_mode6_wtih_feedback\0"
-    fixed_normalised_5_chem = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_5_chem_mode_6\0"
-    fixed_normalised_5_chem_800 = r"C:\Users\Kyle\Desktop\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_5_chem_mode_6_800_2\0"
-    
+    fixed_normalised_5_chem = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_5_chem_mode_6\0"
+    fixed_normalised_5_chem_800 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_5_chem_mode_6_800_2\0"
 
+    fashion_mnist_rosenbaum = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\fashion_mnist\runner_rosenbaum_fashion\0"
+    fashion_5_chem = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\fashion_mnist\runner_mode_6_5_chem_500_tau_fashion\0"
+    fashion_backprop = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\fashion_mnist\runner_backprop_fashion\0"
+    fashion_feedback = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\fashion_mnist\runner_mode_6_feedback_fashion_finetuned\0"
+
+
+    mode_7 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_7\runner_normalise_mode_7_FA\0"
+
+    mode_6_DFA = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_mode_6_DFA_grad\0"
+    mode_6_tau_1000 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_5_chem_mode_6_800_min_tau_1000\0"
+    mode_6_tau_500 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_5_chem_mode_6_800_min_tau_500\0"
+    mode_6_7_chem_tau_500 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_7_chem_mode_6_800_min_tau_500\0"
+    mode_6_7_chem_tau_1000 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_7_chem_mode_6_800_min_tau_1000_2\0"
     #print(all_folders)
-    runner_folders = [runner_rosenbaum_varied, backprop, fixed_normalised, fixed_normalised_5_chem_800, runner_DFA_grad]
-    labels = [r"Rosenbaum", r"Backprop", r"Normalised FA RCN and Normalised Weights", r"Normalised FA RCN and Normalised Weights 5 Chemicals", r"DFA"]
+    backprop_14 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_2_layer_and_forward\14\0"
+    backprop_28 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_2_layer_and_forward\28\0"
+    backprop_56 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_2_layer_and_forward\56\0"
+    backprop_112 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_2_layer_and_forward\112\0"
+    backprop_392 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_2_layer_and_forward\392\0"
+    backprop_784 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_2_layer_and_forward\784\0"
+
+    runner_folders = [backprop_14, backprop_28, backprop_56, backprop_112, backprop_392, backprop_784]
+    labels = ["14", "28", "56", "112", "392", "784"]
     colors = ["red", "blue", "fuchsia", "lime", "cyan", "purple", "orange", "black", "yellow", "green"]
 
     plt.rc('font', family='serif', size=14)
@@ -79,22 +98,18 @@ if __name__ == '__main__':
             #median = np.median(z, axis=0)
             all_values = np.append(all_values, average)
         all_values = all_values
-        x_axis = all_files_int
+        x_axis = all_files_int[:len(all_values)]
         x_axis = x_axis
         plt.plot(x_axis, all_values, label=labels[index], color=colors[index])
         #plt.fill_between(x_axis, 0, all_values, alpha=0.5, facecolor=colors[index])
         plt.scatter(x_axis, all_values, color=colors[index])
-    plt.vlines(30, 0.1, 0.9, colors="black", linestyles="dashed", label="Training region for Normalised RCN")
-    plt.vlines(110, 0.1, 0.9, colors="black", linestyles="dashed")
-    plt.vlines(30, 0.1, 0.9, colors="blue", linestyles="dashed", label="Training region for Normal RCN")
-    plt.vlines(150, 0.1, 0.9, colors="blue", linestyles="dashed")
     plt.legend()
-    plt.title("Average Accuracy Per Training Images Per Class")
+    plt.title("Average Accuracy Per Training Images Per Class for \n 2 layer RNN + feedforward with different input sizes")
     plt.xlabel("Training Images Per Class")
-    plt.xlim(0, 400)
+    plt.xlim(0, 215)
     plt.ylabel("Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/graphs/"
-    plt.savefig(save_dir + "mode_6_5_chem_DFA_400.png")
+    plt.savefig(save_dir + "backprop_rcn.png")
     plt.show()
 
