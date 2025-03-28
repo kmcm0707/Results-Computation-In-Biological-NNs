@@ -78,8 +78,12 @@ if __name__ == '__main__':
     backprop_392 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_2_layer_and_forward\392\0"
     backprop_784 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_2_layer_and_forward\784\0"
 
-    runner_folders = [backprop_14, backprop_28, backprop_56, backprop_112, backprop_392, backprop_784]
-    labels = ["14", "28", "56", "112", "392", "784"]
+    small_examples = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_mode_6_5_train_1500_small_examples\0"
+    small_examples_DFA_grad = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_mode_6_5_train_1500_DFA_grad_small_examples\0"
+
+    runner_DFA_grad_fashion = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\fashion_mnist\runner_mode_6_5_train_DFA_grad_fashion\0"
+    runner_folders = [fashion_backprop, fashion_mnist_rosenbaum, fashion_5_chem, runner_DFA_grad_fashion ]
+    labels = ["Backprop", "Rosenbaum", "5 Chem RCN", "5 Chem DFA Grad RCN"]
     colors = ["red", "blue", "fuchsia", "lime", "cyan", "purple", "orange", "black", "yellow", "green"]
 
     plt.rc('font', family='serif', size=14)
@@ -103,13 +107,17 @@ if __name__ == '__main__':
         plt.plot(x_axis, all_values, label=labels[index], color=colors[index])
         #plt.fill_between(x_axis, 0, all_values, alpha=0.5, facecolor=colors[index])
         plt.scatter(x_axis, all_values, color=colors[index])
-    plt.legend()
-    plt.title("Average Accuracy Per Training Images Per Class for \n 2 layer RNN + feedforward with different input sizes")
+    
+    plt.title("Average Accuracy Per Training Images Per Class \n for EMNIST Meta-Trained Models on Fashion MNIST")
     plt.xlabel("Training Images Per Class")
-    plt.xlim(0, 215)
+    #plt.axvline(x=5, color='blue', linestyle='--', label="Min Training Images for Small Examples")
+    #plt.axvline(x=30, color='red', linestyle='--', label="Min Training Images for Non Small Examples")
+    #plt.axvline(x=90, color='black', linestyle='--', label="Max Training Images")
+    plt.legend()
+    plt.xlim(0, 800)
     plt.ylabel("Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/graphs/"
-    plt.savefig(save_dir + "backprop_rcn.png")
+    plt.savefig(save_dir + "small_examples.png")
     plt.show()
 
