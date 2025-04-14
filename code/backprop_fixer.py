@@ -5,7 +5,7 @@ import numpy as np
 if __name__ == "__main__":
     files = ["14", "28", "56", "112"]
     for i in files:
-        backprop = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_4\{}\0".format(
+        backprop = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_bio\{}\0".format(
             i
         )
         backprop_files = os.listdir(backprop)
