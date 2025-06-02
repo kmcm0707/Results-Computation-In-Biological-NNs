@@ -1,13 +1,12 @@
 import os
-import re
 
 import matplotlib.pyplot as plt
 import numpy as np
-import torch
-from torch.nn import functional
 
 
-def multi_plot_accuracy(directories, labels, window_size=20, save_dir=None, save_name="accuracy"):
+def multi_plot_accuracy(
+    directories, labels, window_size=20, save_dir=None, save_name="accuracy"
+):
     """
         Plot the meta accuracy using a moving average.
 
@@ -26,13 +25,15 @@ def multi_plot_accuracy(directories, labels, window_size=20, save_dir=None, save
         z = comp_moving_avg(np.nan_to_num(z), window_size)
         z = z
         average = average + [z]
-    smallest = min([len(x) for x in average]) 
+    smallest = min([len(x) for x in average])
     average = [x[:smallest] for x in average]
     average = np.array(average)
     x = np.array(range(average.shape[1])) + int((window_size - 1) / 2)
     print(x.shape, average.shape, len(labels))
     for i in range(len(directories)):
-        plt.plot(x, average[i], label="{} last={:.2f}".format(labels[i], average[i][-1]))
+        plt.plot(
+            x, average[i], label="{} last={:.2f}".format(labels[i], average[i][-1])
+        )
     plt.axhline(y=0.2, color="r", linestyle="--", label="Chance Level")
     plt.xlabel("Meta-Training Episodes")
     plt.ylabel("Meta Accuracy")
@@ -42,7 +43,10 @@ def multi_plot_accuracy(directories, labels, window_size=20, save_dir=None, save
     plt.savefig(save_dir + "/" + save_name, bbox_inches="tight")
     plt.close()
 
-def multi_plot_loss(directories, labels, window_size=20, save_dir=None, save_name="loss"):
+
+def multi_plot_loss(
+    directories, labels, window_size=20, save_dir=None, save_name="loss"
+):
     """
         Plot the meta loss using a moving average.
 
@@ -54,7 +58,7 @@ def multi_plot_loss(directories, labels, window_size=20, save_dir=None, save_nam
     :return: None
     """
     # -- plot
-    plt.rc('font', family='serif', size=14)
+    plt.rc("font", family="serif", size=14)
     plt.figure(figsize=(10, 5))
     average = []
     for directory in directories:
@@ -67,7 +71,9 @@ def multi_plot_loss(directories, labels, window_size=20, save_dir=None, save_nam
     x = np.array(range(average.shape[1])) + int((window_size - 1) / 2)
     print(x.shape, average.shape)
     for i in range(len(directories)):
-        plt.plot(x, average[i], label="{} last={:.2f}".format(labels[i], average[i][-1]))
+        plt.plot(
+            x, average[i], label="{} last={:.2f}".format(labels[i], average[i][-1])
+        )
 
     plt.ylim([0, 4])
     plt.xlabel("Meta-Training Episodes")
@@ -77,13 +83,16 @@ def multi_plot_loss(directories, labels, window_size=20, save_dir=None, save_nam
     plt.savefig(save_dir + "/" + save_name, bbox_inches="tight")
     plt.close()
 
-def peak_meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_name="peak_meta_accuracy", window_size=20):
-    plt.rc('font', family='serif', size=10)
+
+def peak_meta_accuracy_scatter_plot(
+    directories, labels, save_dir=None, save_name="peak_meta_accuracy", window_size=20
+):
+    plt.rc("font", family="serif", size=10)
     M = len(directories)
     xx = np.linspace(0, M, M)
     plt.figure(figsize=(10, 5))
-    #sorted_indices = np.argsort(mean_player_skills)
-    #sorted_names = W[sorted_indices]
+    # sorted_indices = np.argsort(mean_player_skills)
+    # sorted_names = W[sorted_indices]
 
     average = []
     for directory in directories:
@@ -95,27 +104,53 @@ def peak_meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_nam
     average = np.array(average)
     best_x = np.max(average, axis=1)
 
-    plt.scatter(xx, best_x, color='red', s=200, marker='x')
+    plt.scatter(xx, best_x, color="red", s=200, marker="x")
     plt.ylim([np.min(best_x) - 0.05, np.max(best_x) + 0.05])
-    #plt.errorbar(mean_skill[sorted_indices], xx, xerr=std_dev[sorted_indices], fmt='o', label='Gibbs Sampling std', color='red', capsize=10, elinewidth=5, capthick=8)
-    #plt.errorbar(mean_player_skills[sorted_indices], xx, xerr=1/np.sqrt(precision_player_skills[sorted_indices]), fmt='o', label='Message Passing std', color='blue', alpha = 0.5, capsize=10, elinewidth=5, capthick=8)
-    #plt.scatter(mean_player_skills[sorted_indices], xx, label='Message Passing', s=200, marker='o')
+    # plt.errorbar(mean_skill[sorted_indices], xx, xerr=std_dev[sorted_indices], fmt='o', label='Gibbs Sampling std', color='red', capsize=10, elinewidth=5, capthick=8)
+    # plt.errorbar(mean_player_skills[sorted_indices], xx, xerr=1/np.sqrt(precision_player_skills[sorted_indices]), fmt='o', label='Message Passing std', color='blue', alpha = 0.5, capsize=10, elinewidth=5, capthick=8)
+    # plt.scatter(mean_player_skills[sorted_indices], xx, label='Message Passing', s=200, marker='o')
     plt.xticks(np.linspace(0, M, M), labels=labels)
-    plt.xlabel('Model')
-    plt.ylabel('Peak Meta-Training Episode Accuracy (Average)')
-    plt.title('Peak Meta-Training Episode Accuracy (Average over {} episodes)'.format(window_size))
+    plt.xlabel("Model")
+    plt.ylabel("Peak Meta-Training Episode Accuracy (Average)")
+    plt.title(
+        "Peak Meta-Training Episode Accuracy (Average over {} episodes)".format(
+            window_size
+        )
+    )
     plt.grid()
     plt.savefig(save_dir + "/" + save_name, bbox_inches="tight")
 
-def meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_name="meta_accuracy", inital_cutoff=0, window_size=20, final_cutoff=200):
-    plt.rc('font', family='serif', size=14)
+
+def meta_accuracy_scatter_plot(
+    directories,
+    labels,
+    save_dir=None,
+    save_name="meta_accuracy",
+    inital_cutoff=0,
+    window_size=20,
+    final_cutoff=200,
+):
+    plt.rc("font", family="serif", size=14)
     M = len(directories)
     xx = np.linspace(0, M, M)
     plt.figure(figsize=(20, 8))
-    #sorted_indices = np.argsort(mean_player_skills)
-    #sorted_names = W[sorted_indices]
+    # sorted_indices = np.argsort(mean_player_skills)
+    # sorted_names = W[sorted_indices]
 
-    colors = ['red', 'blue', 'green', 'purple', 'orange', 'black', 'brown', 'pink', 'gray', 'cyan', 'magenta', 'yellow']
+    colors = [
+        "red",
+        "blue",
+        "green",
+        "purple",
+        "orange",
+        "black",
+        "brown",
+        "pink",
+        "gray",
+        "cyan",
+        "magenta",
+        "yellow",
+    ]
     average = []
     index = 0
     for directory in directories:
@@ -132,16 +167,35 @@ def meta_accuracy_scatter_plot(directories, labels, save_dir=None, save_name="me
     print(average_x, std_dev)
 
     for i in range(len(directories)):
-        plt.scatter(xx[i], average_x[i], s=200, marker='x', label=labels[i] + " mean={:.2f}".format(average_x[i]), c=colors[i])
-        plt.errorbar(xx[i], average_x[i], yerr=std_dev[i], capsize=2, elinewidth=2, capthick=2, fmt='x', c=colors[i])
-    #plt.errorbar(xx, average_x, yerr=std_dev, color='red', capsize=2, elinewidth=2, capthick=2, fmt='x')
+        plt.scatter(
+            xx[i],
+            average_x[i],
+            s=200,
+            marker="x",
+            label=labels[i] + " mean={:.2f}".format(average_x[i]),
+            c=colors[i],
+        )
+        plt.errorbar(
+            xx[i],
+            average_x[i],
+            yerr=std_dev[i],
+            capsize=2,
+            elinewidth=2,
+            capthick=2,
+            fmt="x",
+            c=colors[i],
+        )
+    # plt.errorbar(xx, average_x, yerr=std_dev, color='red', capsize=2, elinewidth=2, capthick=2, fmt='x')
     plt.xticks(np.linspace(0, M, M), labels=labels)
-    plt.xlabel('Model')
-    plt.ylabel('Meta-Training Episode Accuracy (Average)')
-    plt.title('Meta-Training Episode Accuracy (Average over {} episodes)'.format(window_size))
-    plt.legend(loc='lower left')
+    plt.xlabel("Model")
+    plt.ylabel("Meta-Training Episode Accuracy (Average)")
+    plt.title(
+        "Meta-Training Episode Accuracy (Average over {} episodes)".format(window_size)
+    )
+    plt.legend(loc="lower left")
     plt.grid()
     plt.savefig(save_dir + "/" + save_name, bbox_inches="tight")
+
 
 def matrix_plot(matrix, title, save_dir=None):
     """
@@ -152,18 +206,28 @@ def matrix_plot(matrix, title, save_dir=None):
 
     :return: None
     """
-#plt.imshow(K, cmap='seismic', vmin=-np.max(np.abs(K)), vmax=+np.max(np.abs(K)))
-    layer_1 = [[ 0.00303983 , -0.00397467, 0.01357314],
-        [-0.00619128,  0.01326045, 0.0015361 ]] 
-    layer_2 = [[-0.00855512, -0.00674491, 0.0153236 ],
-            [-0.01498219, -0.01596152,  0.00651816]] 
-    layer_3 = [[ 0.00667669, -0.00257127, 0.01131714],
-            [ 0.01044864, -0.00993618, 0.00202428]]
-    layer_4 = [[-0.00274365,  -0.00679861, 0.00440654],
-        [-0.0118851, -0.00399994,  0.00671344]]
-    layer_5 = [[ 0.01694941, 0.00064761, -0.00233966],
-        [-0.07566587, -0.02978626, -0.03679708]]
-    
+    # plt.imshow(K, cmap='seismic', vmin=-np.max(np.abs(K)), vmax=+np.max(np.abs(K)))
+    layer_1 = [
+        [0.00303983, -0.00397467, 0.01357314],
+        [-0.00619128, 0.01326045, 0.0015361],
+    ]
+    layer_2 = [
+        [-0.00855512, -0.00674491, 0.0153236],
+        [-0.01498219, -0.01596152, 0.00651816],
+    ]
+    layer_3 = [
+        [0.00667669, -0.00257127, 0.01131714],
+        [0.01044864, -0.00993618, 0.00202428],
+    ]
+    layer_4 = [
+        [-0.00274365, -0.00679861, 0.00440654],
+        [-0.0118851, -0.00399994, 0.00671344],
+    ]
+    layer_5 = [
+        [0.01694941, 0.00064761, -0.00233966],
+        [-0.07566587, -0.02978626, -0.03679708],
+    ]
+
     """layer_1 = [[ 0.04355053, -0.00799247, 0.00189623],
  [ 0.02642857, -0.01639876, -0.00840973],
  [ 0.04979671, -0.01617483,  -0.00339308]]
@@ -181,52 +245,54 @@ def matrix_plot(matrix, title, save_dir=None):
  [-0.00796888, -0.01034107, -0.00295752]] """
     layers = [layer_1, layer_2, layer_3, layer_4, layer_5]
     max_val = np.max([np.max(np.abs(i)) for i in layers])
-    layer_1 = [[-0.00301073,  0.01338324],
- [ 0.01620886,  0.05991842]] 
-    layer_2 = [[-0.00135528,  0.00779566],
- [ 0.02161961,  0.05046608]] 
-    layer_3 = [[-0.00061672,  0.00403009],
- [ 0.02029086,  0.04342334]] 
-    layer_4 = [[0.00293646, 0.00248897],
- [0.02841949, 0.03633319]]
-    layer_5 = [[ 0.0066308,   0.02309774],
- [-0.02356016,  0.01703037]] 
+    layer_1 = [[-0.00301073, 0.01338324], [0.01620886, 0.05991842]]
+    layer_2 = [[-0.00135528, 0.00779566], [0.02161961, 0.05046608]]
+    layer_3 = [[-0.00061672, 0.00403009], [0.02029086, 0.04342334]]
+    layer_4 = [[0.00293646, 0.00248897], [0.02841949, 0.03633319]]
+    layer_5 = [[0.0066308, 0.02309774], [-0.02356016, 0.01703037]]
     layers = [layer_1, layer_2, layer_3, layer_4, layer_5]
-    #max_val = np.max([np.max(np.abs(i)) for i in layers])
+    # max_val = np.max([np.max(np.abs(i)) for i in layers])
     index = 0
     plt.figure(figsize=(25, 10))
-    #plt.title(title)
-    plt.rc('font', family='serif', size=14)
+    # plt.title(title)
+    plt.rc("font", family="serif", size=14)
     fig, axs = plt.subplots(1, 5)
     for i in layers:
-        
-        axs[index].imshow(i, cmap='seismic', vmin=-max_val, vmax=max_val)
+        axs[index].imshow(i, cmap="seismic", vmin=-max_val, vmax=max_val)
         if index == 2:
-            axs[index].set_title("Layer Dependent RCN $K$ Matrix" + "\n Layer {}".format(index))
+            axs[index].set_title(
+                "Layer Dependent RCN $K$ Matrix" + "\n Layer {}".format(index)
+            )
         else:
             axs[index].set_title("Layer {}".format(index + 1))
-        
+
         if index == 2:
-            #axs[index].set_xticks(range(3), ['$F^0$', '$F^1$ \n Learning Rules', '$F^2$'])
-            axs[index].set_xticks(range(2), ['1 \n \t Chemical', '2'])
+            # axs[index].set_xticks(range(3), ['$F^0$', '$F^1$ \n Learning Rules', '$F^2$'])
+            axs[index].set_xticks(range(2), ["1 \n \t Chemical", "2"])
         else:
-            #axs[index].set_xticks(range(3), ['$F^0$', '$F^1$', '$F^2$'])
-            axs[index].set_xticks(range(2), ['1', '2'])
+            # axs[index].set_xticks(range(3), ['$F^0$', '$F^1$', '$F^2$'])
+            axs[index].set_xticks(range(2), ["1", "2"])
         if index == 0:
-            #axs[index].set_yticks(range(2), ['Chemical 1', 'Chemical 2'])
-            axs[index].set_yticks(range(2), ['Chemical 1', 'Chemical 2'])
+            # axs[index].set_yticks(range(2), ['Chemical 1', 'Chemical 2'])
+            axs[index].set_yticks(range(2), ["Chemical 1", "Chemical 2"])
         else:
             axs[index].set_yticks([], [])
         index += 1
-    
-    norm = plt.Normalize(vmin=-max_val, vmax=max_val)
-    sm = plt.cm.ScalarMappable(cmap='seismic', norm=norm)
-    cax = cax = fig.add_axes([axs[4].get_position().x1 + 0.01,axs[4].get_position().y0,0.02,axs[4].get_position().y1-axs[4].get_position().y0])
-    fig.colorbar(sm, ax=axs, cax=cax)
-    #plt.suptitle(title)
-    #plt.tight_layout()
-    plt.savefig(save_dir + "/" + title, bbox_inches="tight")
 
+    norm = plt.Normalize(vmin=-max_val, vmax=max_val)
+    sm = plt.cm.ScalarMappable(cmap="seismic", norm=norm)
+    cax = cax = fig.add_axes(
+        [
+            axs[4].get_position().x1 + 0.01,
+            axs[4].get_position().y0,
+            0.02,
+            axs[4].get_position().y1 - axs[4].get_position().y0,
+        ]
+    )
+    fig.colorbar(sm, ax=axs, cax=cax)
+    # plt.suptitle(title)
+    # plt.tight_layout()
+    plt.savefig(save_dir + "/" + title, bbox_inches="tight")
 
 
 def comp_moving_avg(data, window_size):
@@ -242,11 +308,22 @@ def comp_moving_avg(data, window_size):
     """
     return np.convolve(data, np.ones(window_size), "valid") / window_size
 
-def meta_accuracy_scatter_plot_2(directories, labels, save_dir=None, save_name="meta_accuracy", inital_cutoff=0, window_size=20, final_cutoff=200, color='red', legend=""):
+
+def meta_accuracy_scatter_plot_2(
+    directories,
+    labels,
+    save_dir=None,
+    save_name="meta_accuracy",
+    inital_cutoff=0,
+    window_size=20,
+    final_cutoff=200,
+    color="red",
+    legend="",
+):
     M = len(directories)
     xx = np.linspace(0, M, M)
-    #sorted_indices = np.argsort(mean_player_skills)
-    #sorted_names = W[sorted_indices]
+    # sorted_indices = np.argsort(mean_player_skills)
+    # sorted_names = W[sorted_indices]
 
     average = []
     for directory in directories:
@@ -259,20 +336,41 @@ def meta_accuracy_scatter_plot_2(directories, labels, save_dir=None, save_name="
     average_x = np.mean(average, axis=1)
     std_dev = np.std(average, axis=1)
 
-    plt.scatter(xx[0], average_x[0], color="purple", s=200, marker='x')
-    plt.scatter(xx[1:], average_x[1:], color=color, s=200, marker='x', label=legend)
+    plt.scatter(xx[0], average_x[0], color="purple", s=200, marker="x")
+    plt.scatter(xx[1:], average_x[1:], color=color, s=200, marker="x", label=legend)
     plt.ylim([np.min(average_x - std_dev) - 0.05, np.max(average_x + std_dev) + 0.05])
     print(average_x, std_dev)
-    plt.errorbar(xx[0], average_x[0], yerr=std_dev[0], color="purple", capsize=2, elinewidth=2, capthick=2, fmt='x')
-    plt.errorbar(xx[1:], average_x[1:], yerr=std_dev[1:], color=color, capsize=2, elinewidth=2, capthick=2, fmt='x')
+    plt.errorbar(
+        xx[0],
+        average_x[0],
+        yerr=std_dev[0],
+        color="purple",
+        capsize=2,
+        elinewidth=2,
+        capthick=2,
+        fmt="x",
+    )
+    plt.errorbar(
+        xx[1:],
+        average_x[1:],
+        yerr=std_dev[1:],
+        color=color,
+        capsize=2,
+        elinewidth=2,
+        capthick=2,
+        fmt="x",
+    )
     plt.xticks(np.linspace(0, M, M), labels=labels)
+
 
 if __name__ == "__main__":
     results_dir = os.getcwd() + "/results"
     save_dir = os.getcwd() + "/graphs"
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
-    old_rosenbaum = results_dir + "/Baselines/rosenbaum_old/All_Enabled/2024-10-07_17-50-20_20"
+    old_rosenbaum = (
+        results_dir + "/Baselines/rosenbaum_old/All_Enabled/2024-10-07_17-50-20_20"
+    )
 
     """mode_1_bias = results_dir + "/Mode_1/mode_1_bias"
     individual_bias_dir = results_dir + "/individual_maybe/1"
@@ -347,16 +445,20 @@ if __name__ == "__main__":
     mode_2_bias_results = [old_rosenbaum] + mode_2_bias_results
     label = ["Shervani Tabar", "2 Chemicals", "3 Chemicals", "5 Chemicals"]
 
-    mode_3 = "results/Mode_3/20241126-225253"
-    mode_3_results = [old_rosenbaum, mode_3]
-    label = ["Shervani Tabar", "momentum-RCN"]
+    
+    """
 
-    more_mode_3 = "results/mode_3_h_zero/0"
+    """mode_3 = "results/mode_3_all/Mode_3/20241126-225253"
+    mode_3_results = [old_rosenbaum, mode_3]
+    label = ["Shervani Tabar", "MOM-RCN"]"""
+
+    more_mode_3 = "results/mode_3_all/mode_3_h_zero/0"
     more_mode_3_results = os.listdir(more_mode_3)
-    mode_3_results = [old_rosenbaum] + [more_mode_3 + "/" + x for x in more_mode_3_results]
-    label = ["Shervani Tabar"] + ["h_zero chemicals={}".format(i) for i in range(1, 6)]
-    print(len(mode_3_results))
-    print(len(label))
+    mode_3_results = [old_rosenbaum] + [
+        [more_mode_3 + "/" + x for x in more_mode_3_results][3]
+    ]
+    label = ["Shervani Tabar"] + ["MOM-RCN"]
+    """
 
     mode_3_h_same = "results/mode_3_h_same/0"
     mode_3_results = os.listdir(mode_3_h_same)
@@ -381,27 +483,26 @@ if __name__ == "__main__":
     different_y_0_results = [different_y_0 + "/" + x for x in different_y_0_results][-2:]
     mode_3_results = [old_rosenbaum] + different_y_0_results
     label = ["Shervani Tabar", "different_y 3 chems", "different_y 5 chems"]"""
-    
 
-    beta = "results/mode_3_all/mode3_beta/0"
+    """beta = "results/mode_3_all/mode3_beta/0"
     beta_results = os.listdir(beta)
     beta_results = [beta + "/" + x for x in beta_results]
     mode_3_results = [old_rosenbaum] + beta_results
-    label = ["Shervani Tabar"] + ["beta={}".format(str(1/(10**i))) for i in range(0, 5, 1)]
-    
+    label = ["Shervani Tabar"] + ["beta={}".format(str(1/(10**i))) for i in range(0, 5, 1)]"""
+
     """schedularT0 = "results/mode_3_all/schedularT0/0"
     schedularT0_results = os.listdir(schedularT0)
     schedularT0_results = [schedularT0 + "/" + x for x in schedularT0_results]
     mode_3_results = [old_rosenbaum] + [beta_results[2]] + schedularT0_results
     label = ["Shervani Tabar", "beta=0.1"] + ["schedularT0={}".format([1, 5, 10, 20, 30, 40][i]) for i in range(6)]"""
 
-    schedularT0_non_broken = "results/mode_3_all/schedularT0_non_broken/1"
+    """schedularT0_non_broken = "results/mode_3_all/schedularT0_non_broken/1"
     schedularT0_non_broken_results = os.listdir(schedularT0_non_broken)
     schedularT0_non_broken_results = [schedularT0_non_broken + "/" + x for x in schedularT0_non_broken_results]
     schedularT0_non_broken_results.insert(0, schedularT0_non_broken_results[-1])
     schedularT0_non_broken_results.pop(-1)
     mode_3_results = [old_rosenbaum] + [beta_results[2]] + schedularT0_non_broken_results
-    label = ["Shervani Tabar", "beta=0.1"] + ["schedularT0={}".format([5, 10, 20, 30, 40][i]) for i in range(5)]
+    label = ["Shervani Tabar", "beta=0.1"] + ["schedularT0={}".format([5, 10, 20, 30, 40][i]) for i in range(5)]"""
 
     """different_y_0 = "results/different_y_0/0"
     different_y_0_results = os.listdir(different_y_0)
@@ -443,19 +544,36 @@ if __name__ == "__main__":
     mode_3_results = runner_different_y_ind_v_diff_results
     label = [10, 20, 30, 40, 50, 60, 80, 120]"""
 
-    save_prefix = "schedularT0_non_broken"
+    save_prefix = "m3T0_non_broken"
 
-    
     print(mode_3_results)
-    multi_plot_accuracy(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + ".png")
-    peak_meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_s.png")
-    meta_accuracy_scatter_plot(mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_sc.png", inital_cutoff=470, final_cutoff=500, window_size=10)
-    multi_plot_loss(mode_3_results, label, window_size=20, save_dir=save_dir, save_name=save_prefix + "_loss.png")
+    multi_plot_accuracy(
+        mode_3_results,
+        label,
+        window_size=20,
+        save_dir=save_dir,
+        save_name=save_prefix + ".png",
+    )
+    peak_meta_accuracy_scatter_plot(
+        mode_3_results, label, save_dir=save_dir, save_name=save_prefix + "_s.png"
+    )
+    meta_accuracy_scatter_plot(
+        mode_3_results,
+        label,
+        save_dir=save_dir,
+        save_name=save_prefix + "_sc.png",
+        inital_cutoff=470,
+        final_cutoff=500,
+        window_size=10,
+    )
+    multi_plot_loss(
+        mode_3_results,
+        label,
+        window_size=20,
+        save_dir=save_dir,
+        save_name=save_prefix + "_loss.png",
+    )
     print("Done")
-
-
-
-
 
     """label = ["Shervani-Tabar"] + ["{} Chemicals".format(i) for i in range(2, 6)]
 
@@ -480,7 +598,3 @@ if __name__ == "__main__":
     save_dir = os.getcwd() + "/graphs"
     plt.rc('font', family='serif', size=10)
     matrix_plot(None, "Layer K 2 Matrix", save_dir=save_dir)"""
-
-
-
-    
