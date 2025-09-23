@@ -86,16 +86,26 @@ if __name__ == "__main__":
     runner_mode_6_ind_non_ind_v = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_mode_6_ind_non_ind_v\0"
 
     # runner_DFA_grad_fashion = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\fashion_mnist\runner_mode_6_5_train_DFA_grad_fashion\0"
+    runner_mode_4_1_chems = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_4\runner_mode_4_1_chems\0"
+    runner_mode_6_1_chem = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_mode_6_1_chem\0"
+
+    # rnns:
+    rnn_backprop_mode_1 = (
+        os.getcwd() + r"/rnn_results_runner/runner_rnn_backprop_mode_1/112/0"
+    )
+    rnn_fast_mode_1 = os.getcwd() + r"/rnn_results_runner/runner_rnn_fast_mode_1/0"
+    rnn_fast_mode_3 = os.getcwd() + r"/rnn_results_runner/runner_rnn_fast_mode_3/0"
+
     runner_folders = [
-        runner_mode_6_2_chem,
-        fixed_normalised,
-        fixed_normalised_5_chem,
+        rnn_backprop_mode_1,
+        rnn_fast_mode_1,
+        rnn_fast_mode_3,
     ]
     # runner_folders = all_folders
     labels = [
-        "2 Chemical WN-RCN",
-        "3 Chemical WN-RCN",
-        "5 Chemical WN-RCN",
+        "RNN Backprop",
+        "RNN Fast Linear",
+        "RNN Fast Tanh",
     ]
     # labels = ["1.5", "2", "3", "4", "5", "20", "30", "50"]
     colors = [
@@ -118,11 +128,6 @@ if __name__ == "__main__":
         all_files_int = [int(all_files[i]) for i in range(len(all_files))]
         all_files_int.sort()
 
-        if all_files_int[0] == 0:
-            all_files_int = all_files_int[1:]
-        if all_files_int[-1] == 375:
-            all_files_int = all_files_int[:-1]
-
         all_files = [str(x) for x in all_files_int]
         all_values = np.array([])
         for j in all_files:
@@ -138,15 +143,16 @@ if __name__ == "__main__":
         plt.scatter(x_axis, all_values, color=colors[index])
         x_axis = np.array(x_axis)
 
-    plt.title(r"Average Accuracy Per Training Images Per Class")
+    plt.title(r"Average Accuracy Per Training Images Per Class for 3 chemical RCNs")
     plt.xlabel("Training Images Per Class")
     # plt.axvline(x=5, color='blue', linestyle='--', label="Min Training Images for Small Examples")
-    plt.axvline(x=50, color="black", linestyle="--", label="Training Images")
-    # plt.axvline(x=50, color="black", linestyle="--", label="Max Training Images")
+    plt.axvline(x=30, color="black", linestyle="--", label="Min Training Images")
+    plt.axvline(x=50, color="black", linestyle="--", label="Max Training Images")
     plt.legend()
-    plt.xlim(0, 400)
+    plt.xlim(-5, 100)
+    plt.ylim(0, 1)
     plt.ylabel("Evaluation Accuracy")
     plt.tight_layout()
-    save_dir = os.getcwd() + "/graphs/"
-    plt.savefig(save_dir + "chems.png")
+    save_dir = os.getcwd() + "/rnns_graphs/"
+    plt.savefig(save_dir + "rnns_graph.png")
     plt.show()

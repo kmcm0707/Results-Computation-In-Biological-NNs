@@ -29,13 +29,13 @@ if __name__ == "__main__":
     runner_lr_5 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_4\runner_lr_5\0"
 
     # folders = [runner_rosenbaum_varied, fixed_normalised_5_chem_800, mode_6_tau_500, mode_6_tau_1000]
-    folders = [runner_rosenbaum_varied, fixed_normalised, fixed_normalised_feedback]
+    folders = [runner_rosenbaum_varied, fixed_normalised, fixed_normalised_5_chem_800]
     plt.rc("font", family="serif", size=18)
     fig, ax = plt.subplots(ncols=4, nrows=1, figsize=(24, 10), sharey=True)
     labels = [
         "Shervani-Tabar",
+        r"RCN",
         r"WN-RCN",
-        r"WN-RCN with Feedback",
     ]
     colors = [
         "blue",
@@ -108,5 +108,5 @@ if __name__ == "__main__":
     fig.suptitle("Angle between error signals and backprop for Meta-trained models")
     fig.tight_layout()
     save_dir = os.getcwd() + "/graphs/"
-    plt.savefig(save_dir + "feedback_e_angle.png")
+    plt.savefig(save_dir + "WNRCN_e_angle.png")
     plt.show()
