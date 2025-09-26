@@ -106,16 +106,16 @@ if __name__ == "__main__":
     )
 
     runner_folders = [
-        # rnn_backprop_mode_1,
+        rnn_backprop_mode_1,
         rnn_backprop_mode_4,
-        # rnn_fast_mode_1,
+        rnn_fast_mode_1,
         rnn_fast_mode_4_2,
     ]
     # runner_folders = all_folders
     labels = [
-        # "RNN Backprop Tanh",
+        "RNN Backprop Tanh",
         "RNN Backprop Mode 4",
-        # "RNN RCN Fast Mode 1",
+        "RNN RCN Fast Mode 1",
         "RNN RCN Fast Mode 4",
     ]
     # labels = ["1.5", "2", "3", "4", "5", "20", "30", "50"]
@@ -165,5 +165,5 @@ if __name__ == "__main__":
     plt.ylabel("Evaluation Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/rnns_graphs/"
-    plt.savefig(save_dir + "rnns_graph_mode_4.png")
+    plt.savefig(save_dir + "rnns_graph_mode_1_mode4.png")
     plt.show()
