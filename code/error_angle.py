@@ -29,13 +29,15 @@ if __name__ == "__main__":
     runner_lr_5 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_4\runner_lr_5\0"
 
     # folders = [runner_rosenbaum_varied, fixed_normalised_5_chem_800, mode_6_tau_500, mode_6_tau_1000]
-    folders = [runner_rosenbaum_varied, fixed_normalised, fixed_normalised_5_chem_800]
+    new_scalar_5 = os.getcwd() + r"/results_runner/new_scalar/runner_scalar_fixed_5_3/0"
+    folders = [runner_rosenbaum_varied, fixed_normalised, mode_6_DFA_grad, new_scalar_5]
     plt.rc("font", family="serif", size=18)
-    fig, ax = plt.subplots(ncols=4, nrows=1, figsize=(24, 10), sharey=True)
+    fig, ax = plt.subplots(ncols=4, nrows=1, figsize=(18, 5), sharey=True)
     labels = [
-        "Shervani-Tabar",
-        r"RCN",
-        r"WN-RCN",
+        r"Simple Synapse FA",
+        r"FA",
+        r"DFA",
+        r"Scalar",
     ]
     colors = [
         "blue",
@@ -57,7 +59,7 @@ if __name__ == "__main__":
         all_files = [str(x) for x in all_files_int]
         all_values = []
         for j in all_files:
-            if int(j) > 700:
+            if int(j) > 250:
                 continue
             directory = i + "/" + j
             z = np.loadtxt(directory + "/e_ang_meta.txt")
@@ -80,7 +82,7 @@ if __name__ == "__main__":
         ax[3].scatter(x_axis, three_axis, color=colors[index])
 
     ax[0].set_title("Layer 1")
-    ax[0].set_xlabel("Training Images Per Class")
+    ax[0].set_xlabel("Training Samples Per Class")
     ax[0].set_ylabel("Degrees")
     ax[0].set_ylim(0, 99)
     ax[0].set_yticks(np.arange(0, 100, 10))
@@ -88,25 +90,28 @@ if __name__ == "__main__":
     ax[0].legend()
 
     ax[1].set_title("Layer 2")
-    ax[1].set_xlabel("Training Images Per Class")
+    ax[1].set_xlabel("Training Samples Per Class")
     # ax[1].set_ylabel("Degrees")
     ax[1].set_ylim(0, 99)
     # ax[0,1].legend()
 
     ax[2].set_title("Layer 3")
-    ax[2].set_xlabel("Training Images Per Class")
+    ax[2].set_xlabel("Training Samples Per Class")
     # ax[2].set_ylabel("Degrees")
     ax[2].set_ylim(0, 99)
     # ax[1,0].legend()
 
     ax[3].set_title("Layer 4")
-    ax[3].set_xlabel("Training Images Per Class")
+    ax[3].set_xlabel("Training Samples Per Class")
     # ax[3].set_ylabel("Degrees")
     ax[3].set_ylim(0, 99)
     # ax[1,1].legend()
 
-    fig.suptitle("Angle between error signals and backprop for Meta-trained models")
-    fig.tight_layout()
-    save_dir = os.getcwd() + "/graphs/"
-    plt.savefig(save_dir + "WNRCN_e_angle.png")
+    fig.suptitle(
+        "5 State Complex Synapse"
+    )  # Angle between error signals and backprop for Meta-trained models
+    # fig.tight_layout()
+    save_dir = os.getcwd() + "/rnns_graphs/"
+    plt.tight_layout()
+    plt.savefig(save_dir + "ALL_e_angle.png")
     plt.show()

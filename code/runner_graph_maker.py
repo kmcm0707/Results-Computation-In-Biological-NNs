@@ -66,6 +66,31 @@ if __name__ == "__main__":
     mode_6_7_chem_tau_500 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_7_chem_mode_6_800_min_tau_500\0"
     mode_6_7_chem_tau_1000 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_7_chem_mode_6_800_min_tau_1000_2\0"
     runner_mode_6_2_chem = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_6\runner_mode_6_2_chem\0"
+
+    scalar_chem_1 = (
+        os.getcwd() + r"/results_runner/scalar/runner_mode_6_1_chem_scalar/0"
+    )
+    scalar_chem_3 = (
+        os.getcwd() + r"/results_runner/scalar/runner_mode_6_3_chem_scalar/0"
+    )
+    scalar_chem_5 = (
+        os.getcwd() + r"/results_runner/scalar/runner_mode_6_5_chem_scalar/0"
+    )
+    scalar_chem_7 = (
+        os.getcwd() + r"/results_runner/scalar/runner_mode_6_7_chem_scalar/0"
+    )
+
+    new_scalar_5 = os.getcwd() + r"/results_runner/new_scalar/runner_scalar_fixed_5_4/0"
+    new_scalar_1 = os.getcwd() + r"/results_runner/new_scalar/runner_scalar_fixed_1/0"
+    new_scalar_3_3 = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_scalar_fixed_3_3/0"
+    )
+    new_scalar_3 = os.getcwd() + r"/results_runner/new_scalar/runner_scalar_fixed_3_6/0"
+
+    DFA_chem_1 = os.getcwd() + r"/results_runner/DFA/runner_mode_6_1_chem_DFA/0"
+    DFA_chem_3 = os.getcwd() + r"/results_runner/DFA/runner_mode_6_3_chem_DFA/0"
+    DFA_chem_5 = os.getcwd() + r"/results_runner/DFA/runner_mode_6_5_chem_DFA/0"
+    DFA_chem_7 = os.getcwd() + r"/results_runner/DFA/runner_mode_6_7_chem_DFA/0"
     # print(all_folders)
     # backprop_14 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_2_layer_and_forward\14\0"
     # backprop_28 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_rnn_backprop_2_layer_and_forward\28\0"
@@ -104,40 +129,157 @@ if __name__ == "__main__":
     rnn_fast_mode_4_2 = (
         os.getcwd() + r"/rnn_results_runner/runner_rnn_fast_mode_4_128_longer/0"
     )
+    runner_rnn_fast_mode_4_128_longer_test_time_compute = (
+        os.getcwd()
+        + r"/rnn_results_runner/runner_rnn_fast_mode_4_128_longer_test_time_compute/0"
+    )
 
-    runner_folders = [
-        rnn_backprop_mode_1,
+    rflo_mode_4 = (
+        os.getcwd() + r"/rnn_results_runner/runner_test_rnn_rflo_linear_2/112/0"
+    )
+    rflo_weird_mode_4 = (
+        os.getcwd() + r"/rnn_results_runner/runner_rnn_rflo_mode_4_3/112/0"
+    )
+
+    more_layers_6_DFA_5 = (
+        os.getcwd() + r"/results_runner/more_layers/runner_DFA_6_layer_true_3_5_chem/0"
+    )
+    more_layers_10_DFA_5 = (
+        os.getcwd() + r"/results_runner/more_layers/runner_DFA_10_layer_5_chem/0"
+    )
+    backprop_more_layers_10 = (
+        os.getcwd() + r"/results_runner/runner_backprop_10_layer_EMNIST_3/0/"
+    )
+
+    runner_DFA_5_layer_5_chem_fashion_new = (
+        os.getcwd() + r"/results_runner/DFA/runner_DFA_5_layer_5_chem_fashion_new/0"
+    )
+
+    runner_DFA_10_layer_5_chem_fashion_new = (
+        os.getcwd() + r"/results_runner/DFA/runner_DFA_10_layer_5_chem_fashion_new/0"
+    )
+
+    runner_backprop_10_layer_fashion_mnist = (
+        os.getcwd() + r"/results_runner/runner_backprop_10_layer_fashion_mnist/0/"
+    )
+
+    """runner_folders = [
         rnn_backprop_mode_4,
-        rnn_fast_mode_1,
         rnn_fast_mode_4_2,
+        rflo_mode_4,
+        # rflo_weird_mode_4,
+    ]"""
+    """runner_folders = [
+        scalar_chem_1,
+        scalar_chem_3,
+        scalar_chem_5,
+        scalar_chem_7,
+    ]"""
+    """runner_folders = [
+        backprop,
+        DFA_chem_1,
+        # DFA_chem_3,
+        # backprop,
+        small_examples,
+        # scalar_chem_5,
+        DFA_chem_5,
+        # new_scalar_5,
+        new_scalar_5,
+        # DFA_chem_7,
+        runner_rosenbaum_varied,
+    ]"""
+    """runner_folders = [
+        backprop,
+        new_scalar_1,
+        new_scalar_3,
+        new_scalar_5,
+    ]"""
+    """runner_folders = [
+        backprop,
+        backprop_more_layers_10,
+        DFA_chem_5,
+        more_layers_10_DFA_5,
+    ]"""
+    runner_folders = [
+        fashion_backprop,
+        runner_backprop_10_layer_fashion_mnist,
+        runner_DFA_5_layer_5_chem_fashion_new,
+        runner_DFA_10_layer_5_chem_fashion_new,
+        fashion_mnist_rosenbaum,
+        fashion_5_chem,
     ]
+
+    """runner_folders = [
+        backprop,
+        rnn_fast_mode_4_2,
+        rflo_mode_4,
+    ]"""
+    """runner_folders = [
+        fashion_backprop,
+        fashion_mnist_rosenbaum,
+        fashion_5_chem,
+        runner_3chem_fashion_mnist2,
+        runner_3chem_fashion_mnist,
+    ]"""
     # runner_folders = all_folders
+    """labels = [
+        "Backprop",
+        "Simple Synapse Direct Vector-Error Feedback",  # direct vector-error feedback
+        # "1 Chem DFA",
+        # "3 State",
+        # "5 State",
+        # "7 State",
+        "Layerwise Vector-Error Feedback (FA)",
+        # "Scalar",
+        "Direct Vector-Error Feedback (DFA)",
+        "Direct Scalar-Error Feedback (scalar)",
+        "Rosenbaum FA",
+    ]"""
+    """labels = [
+        "BPTT",
+        "Complex Synapse",
+        "RFLO",
+    ]"""
+    """labels = [
+        "Backprop",
+        "Simple Synapse",  # direct vector-error feedback
+        "3 State Variables",
+        "5 State Variables",
+        # "7 State Variables",
+    ]"""
     labels = [
-        "RNN Backprop Tanh",
-        "RNN Backprop Mode 4",
-        "RNN RCN Fast Mode 1",
-        "RNN RCN Fast Mode 4",
+        "Backprop 5 layers",
+        "Backprop 10 layers",
+        "5 Layers",
+        "10 Layers",
+        "rose",
+        "pre",
     ]
     # labels = ["1.5", "2", "3", "4", "5", "20", "30", "50"]
     colors = [
-        "red",
-        "blue",
-        "fuchsia",
-        "lime",
-        "cyan",
-        "purple",
-        "orange",
-        "black",
-        "yellow",
-        "green",
+        "#0343df",
+        "#e50000",
+        "#7e1e9c",
+        "#f97306",
+        "#008000",
+        "#800080",
+        "#ffa500",
+        "#000000",
+        "#ffff00",
+        "#008000",
     ]
 
     plt.rc("font", family="serif", size=14)
-    plt.figure(figsize=(13, 8))
+    plt.figure(figsize=(9, 5))
+    limit = 1400
     for index, i in enumerate(runner_folders):
         all_files = os.listdir(i)
         all_files_int = [int(all_files[i]) for i in range(len(all_files))]
         all_files_int.sort()
+        for k in range(len(all_files_int)):
+            if all_files_int[k] > limit:
+                all_files_int = all_files_int[:k]
+                break
 
         all_files = [str(x) for x in all_files_int]
         all_values = np.array([])
@@ -145,25 +287,37 @@ if __name__ == "__main__":
             directory = i + "/" + j
             z = np.loadtxt(directory + "/acc_meta.txt")
             average = np.mean(z, axis=0)
+            std = np.std(z, axis=0)
             # median = np.median(z, axis=0)
             all_values = np.append(all_values, average)
-        all_values = all_values
+            print(i, j, average, std)
+        all_values = all_values[:limit]
         x_axis = all_files_int[: len(all_values)]
-        plt.plot(x_axis, all_values, label=labels[index], color=colors[index])
+        if index < 2:
+            plt.plot(
+                x_axis,
+                all_values,
+                # label=labels[index],
+                color=colors[index],
+                linestyle="--",
+            )
+            plt.scatter(x_axis, all_values, color=colors[index])
+        else:
+            plt.plot(x_axis, all_values, label=labels[index], color=colors[index - 2])
+            plt.scatter(x_axis, all_values, color=colors[index - 2])
         # plt.fill_between(x_axis, 0, all_values, alpha=0.5, facecolor=colors[index])
-        plt.scatter(x_axis, all_values, color=colors[index])
         x_axis = np.array(x_axis)
 
-    plt.title(r"Average Accuracy Per Training Images Per Class for 3 chemical RCNs")
-    plt.xlabel("Training Images Per Class")
+    # plt.title(r"Scalar Error Complex Synapse Performance")
+    plt.xlabel("Training Samples Per Class")
     # plt.axvline(x=5, color='blue', linestyle='--', label="Min Training Images for Small Examples")
-    plt.axvline(x=30, color="black", linestyle="--", label="Min Training Images")
-    plt.axvline(x=50, color="black", linestyle="--", label="Max Training Images")
+    plt.axvline(x=5, color="black", linestyle="--")
+    plt.axvline(x=80, color="black", linestyle="--")
     plt.legend()
-    plt.xlim(-5, 100)
+    plt.xlim(-5, limit + 10)
     plt.ylim(0, 1)
     plt.ylabel("Evaluation Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/rnns_graphs/"
-    plt.savefig(save_dir + "rnns_graph_mode_1_mode4.png")
+    plt.savefig(save_dir + "layers_2.png")
     plt.show()

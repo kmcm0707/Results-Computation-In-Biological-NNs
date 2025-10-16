@@ -5,7 +5,7 @@ import numpy as np
 import torch
 
 if __name__ == "__main__":
-    runner_mode_6_ind_non_ind_v = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results\mode_6_ind\0\20250601-234232"
+    runner_mode_6_ind_non_ind_v = r"results\DFA_5_regularized_not_K\0\20251009-180024\acc_meta.txt"
     state_dict = torch.load(
         runner_mode_6_ind_non_ind_v + r"\UpdateWeights.pth",
         map_location=torch.device("cpu"),
