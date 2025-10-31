@@ -15,9 +15,10 @@ if __name__ == "__main__":
         results_dir + r"/DFA_5_regularized_not_K/0/20251009-180024/UpdateWeights.pth"
     )"""
 
-    five_chem = results_dir + r"/DFA_longer_5/0/20251008-023058/UpdateWeights.pth"
+    # five_chem = results_dir + r"/DFA_20_chem/0/20251020-002002/UpdateWeights.pth"
+    three_chem = results_dir + r"/DFA_longer_3/0/20251008-021524/UpdateWeights.pth"
     five_chem_K_matrix = torch.load(
-        five_chem, map_location=torch.device("cpu"), weights_only=True
+        three_chem, map_location=torch.device("cpu"), weights_only=True
     )["K_matrix"]
 
     five_chem_K_matrix = np.array(five_chem_K_matrix, dtype=np.float32, copy=True)
@@ -30,12 +31,12 @@ if __name__ == "__main__":
     plt.colorbar(norm=divnorm, cmap="seismic")
     plt.xlabel("Complex Synapse State")
     plt.ylabel("Complex Synapse State")
-    plt.yticks(
+    """plt.yticks(
         ticks=np.arange(0, 5),
         labels=np.arange(1, 6),
-    )
+    )"""
     plt.title(
-        "K Matrix for 5 State Direct Vector-Error Feedback", fontdict={"fontsize": 10}
+        "K Matrix for 3 State Direct Vector-Error Feedback", fontdict={"fontsize": 10}
     )
-    plt.savefig(save_dir + "/K_matrix_5_chem.png")
+    plt.savefig(save_dir + "/K_matrix_3_chem.png")
     plt.show()
