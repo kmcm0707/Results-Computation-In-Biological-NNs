@@ -86,6 +86,21 @@ if __name__ == "__main__":
         os.getcwd() + r"/results_runner/new_scalar/runner_scalar_fixed_3_3/0"
     )
     new_scalar_3 = os.getcwd() + r"/results_runner/new_scalar/runner_scalar_fixed_3_6/0"
+    new_scalar_3_mode_9 = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_9_scalar_3_chems/0"
+    )
+    runner_mode_9_scalar_GPU_5 = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_9_scalar_GPU_5/0"
+    )
+    runner_mode_9_scalar_fixed = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_9_fixed/0"
+    )
+    runner_mode_9_scalar_fixed_8 = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_9_fixed_8/0"
+    )
+    runner_mode_9_scalar_GPU_6 = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_9_scalar_GPU_6/0"
+    )
 
     DFA_chem_1 = os.getcwd() + r"/results_runner/DFA/runner_mode_6_1_chem_DFA/0"
     DFA_chem_3 = os.getcwd() + r"/results_runner/DFA/runner_mode_6_3_chem_DFA/0"
@@ -163,6 +178,7 @@ if __name__ == "__main__":
         os.getcwd() + r"/results_runner/runner_backprop_10_layer_fashion_mnist/0/"
     )
 
+    runner_mode_9 = os.getcwd() + r"/results_runner/runner_mode_9_rand/0/"
     """runner_folders = [
         rnn_backprop_mode_4,
         rnn_fast_mode_4_2,
@@ -175,19 +191,26 @@ if __name__ == "__main__":
         scalar_chem_5,
         scalar_chem_7,
     ]"""
-    """runner_folders = [
+    runner_folders = [
         backprop,
-        DFA_chem_1,
+        # DFA_chem_1,
         # DFA_chem_3,
         # backprop,
-        small_examples,
+        # small_examples,
         # scalar_chem_5,
-        DFA_chem_5,
+        # DFA_chem_5,
+        # runner_mode_9,
         # new_scalar_5,
-        new_scalar_5,
+        # new_scalar_5,
         # DFA_chem_7,
-        runner_rosenbaum_varied,
-    ]"""
+        # runner_rosenbaum_varied,
+        new_scalar_1,
+        # new_scalar_3,
+        new_scalar_3_mode_9,
+        # new_scalar_5,
+        runner_mode_9_scalar_fixed,
+        runner_mode_9_scalar_fixed_8,
+    ]
     """runner_folders = [
         backprop,
         new_scalar_1,
@@ -200,14 +223,14 @@ if __name__ == "__main__":
         DFA_chem_5,
         more_layers_10_DFA_5,
     ]"""
-    runner_folders = [
+    """runner_folders = [
         fashion_backprop,
         runner_backprop_10_layer_fashion_mnist,
         runner_DFA_5_layer_5_chem_fashion_new,
         runner_DFA_10_layer_5_chem_fashion_new,
         fashion_mnist_rosenbaum,
         fashion_5_chem,
-    ]
+    ]"""
 
     """runner_folders = [
         backprop,
@@ -224,15 +247,17 @@ if __name__ == "__main__":
     # runner_folders = all_folders
     """labels = [
         "Backprop",
-        "Simple Synapse Direct Vector-Error Feedback",  # direct vector-error feedback
+        # "Simple Synapse Direct Vector-Error Feedback",  # direct vector-error feedback
         # "1 Chem DFA",
         # "3 State",
         # "5 State",
         # "7 State",
-        "Layerwise Vector-Error Feedback (FA)",
+        # "Layerwise Vector-Error Feedback (FA)",
         # "Scalar",
-        "Direct Vector-Error Feedback (DFA)",
-        "Direct Scalar-Error Feedback (scalar)",
+        # "Direct Vector-Error Feedback (DFA)",
+        # "Direct Scalar-Error Feedback (scalar)",
+        "$W$ and $H$ Normalised Independently",
+        "$H$ Normalised using $W$",
         "Rosenbaum FA",
     ]"""
     """labels = [
@@ -240,21 +265,23 @@ if __name__ == "__main__":
         "Complex Synapse",
         "RFLO",
     ]"""
-    """labels = [
+    labels = [
         "Backprop",
         "Simple Synapse",  # direct vector-error feedback
         "3 State Variables",
+        "3 State Variables New",
         "5 State Variables",
+        "5 State Variables New",
         # "7 State Variables",
-    ]"""
-    labels = [
+    ]
+    """labels = [
         "Backprop 5 layers",
         "Backprop 10 layers",
         "5 Layers",
         "10 Layers",
         "rose",
         "pre",
-    ]
+    ]"""
     # labels = ["1.5", "2", "3", "4", "5", "20", "30", "50"]
     colors = [
         "#0343df",
@@ -271,7 +298,7 @@ if __name__ == "__main__":
 
     plt.rc("font", family="serif", size=14)
     plt.figure(figsize=(9, 5))
-    limit = 1400
+    limit = 200
     for index, i in enumerate(runner_folders):
         all_files = os.listdir(i)
         all_files_int = [int(all_files[i]) for i in range(len(all_files))]
@@ -290,10 +317,10 @@ if __name__ == "__main__":
             std = np.std(z, axis=0)
             # median = np.median(z, axis=0)
             all_values = np.append(all_values, average)
-            print(i, j, average, std)
+            # print(i, j, average, std)
         all_values = all_values[:limit]
         x_axis = all_files_int[: len(all_values)]
-        if index < 2:
+        """if index < 2:
             plt.plot(
                 x_axis,
                 all_values,
@@ -304,7 +331,14 @@ if __name__ == "__main__":
             plt.scatter(x_axis, all_values, color=colors[index])
         else:
             plt.plot(x_axis, all_values, label=labels[index], color=colors[index - 2])
-            plt.scatter(x_axis, all_values, color=colors[index - 2])
+            plt.scatter(x_axis, all_values, color=colors[index - 2])"""
+        plt.plot(
+            x_axis,
+            all_values,
+            label=labels[index],
+            color=colors[index],
+        )
+        plt.scatter(x_axis, all_values, color=colors[index])
         # plt.fill_between(x_axis, 0, all_values, alpha=0.5, facecolor=colors[index])
         x_axis = np.array(x_axis)
 
@@ -319,5 +353,5 @@ if __name__ == "__main__":
     plt.ylabel("Evaluation Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/rnns_graphs/"
-    plt.savefig(save_dir + "layers_2.png")
+    # plt.savefig(save_dir + "mode_9.png")
     plt.show()

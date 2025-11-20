@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 if __name__ == "__main__":
-    backprop = os.getcwd() + r"/results_runner/runner_backprop_10_layer_EMNIST_3/0/"
+    backprop = os.getcwd() + r"/results_runner/runner_backprop_CL_EWC_2000/0/"
     backprop_files = os.listdir(backprop)
     for i in backprop_files:
         directory = os.path.join(backprop, i)

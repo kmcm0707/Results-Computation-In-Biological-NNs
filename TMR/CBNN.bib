@@ -223,7 +223,7 @@
   volume = {19},
   publisher = {MIT Press},
   urldate = {2024-10-10},
-  abstract = {Recent analyses (Bengio, Delalleau, \& Le Roux, 2006; Bengio \& Le Cun, 2007) of modern nonparametric machine learning algorithms that are kernel machines, such as Support Vector Machines (SVMs), graph-based manifold and semi-supervised learning algorithms suggest fundamental limitations of some learning algorithms. The problem is clear in kernel-based approaches when the kernel is "local" (e.g., the Gaussian kernel), i.e., K (x, y ) converges to a constant when {\textbar}{\textbar}x - y {\textbar}{\textbar} increases. These analyses point to the difficulty of learning "highly-varying functions", i.e., functions that have a large number of "variations" in the domain of interest, e.g., they would require a large number of pieces to be well represented by a piecewise-linear approximation. Since the number of pieces can be made to grow exponentially with the number of factors of variations in the input, this is connected with the well-known curse of dimensionality for classical non-parametric learning algorithms (for regression, classification and density estimation). If the shapes of all these pieces are unrelated, one needs enough examples for each piece in order to generalize properly. However, if these shapes are related and can be predicted from each other, "non-local" learning algorithms have the potential to generalize to pieces not covered by the training set. Such ability would seem necessary for learning in complex domains such as Artificial Intelligence tasks (e.g., related to vision, language, speech, robotics). Kernel machines (not only those with a local kernel) have a shallow architecture, i.e., only two levels of data-dependent computational elements. This is also true of feedforward neural networks with a single hidden layer (which can become SVMs when the number of hidden units becomes large (Bengio, Le Roux, Vincent, Delalleau, \& Marcotte, 2006)). A serious problem with shallow architectures is that they can be very inefficient in terms of the number of computational units (e.g., bases, hidden units), and thus in terms of required examples (Bengio \& Le Cun, 2007). One way to represent a highly-varying function compactly (with few parameters) is through the composition of many non-linearities, i.e., with a deep architecture. For example, the parity function with d inputs requires O(2d ) examples and parameters to be represented by a Gaussian SVM (Bengio et al., 2006), O(d2 ) parameters for a one-hidden-layer neural network, O(d) parameters and units for a multi-layer network with O(log2 d) layers, and O(1) parameters with a recurrent neural network. More generally,},
+  abstract = {Recent analyses (Bengio, Delalleau, \& Le Roux, 2006; Bengio \& Le Cun, 2007) of modern nonparametric machine learning algorithms that are kernel machines, such as Support Vector Machines (SVMs), graph-based manifold and semi-supervised learning algorithms suggest fundamental limitations of some learning algorithms. The problem is clear in kernel-based approaches when the kernel is "local" (e.g., the Gaussian kernel), i.e., K (x, y ) converges to a constant when \textbar\textbar x - y \textbar\textbar{} increases. These analyses point to the difficulty of learning "highly-varying functions", i.e., functions that have a large number of "variations" in the domain of interest, e.g., they would require a large number of pieces to be well represented by a piecewise-linear approximation. Since the number of pieces can be made to grow exponentially with the number of factors of variations in the input, this is connected with the well-known curse of dimensionality for classical non-parametric learning algorithms (for regression, classification and density estimation). If the shapes of all these pieces are unrelated, one needs enough examples for each piece in order to generalize properly. However, if these shapes are related and can be predicted from each other, "non-local" learning algorithms have the potential to generalize to pieces not covered by the training set. Such ability would seem necessary for learning in complex domains such as Artificial Intelligence tasks (e.g., related to vision, language, speech, robotics). Kernel machines (not only those with a local kernel) have a shallow architecture, i.e., only two levels of data-dependent computational elements. This is also true of feedforward neural networks with a single hidden layer (which can become SVMs when the number of hidden units becomes large (Bengio, Le Roux, Vincent, Delalleau, \& Marcotte, 2006)). A serious problem with shallow architectures is that they can be very inefficient in terms of the number of computational units (e.g., bases, hidden units), and thus in terms of required examples (Bengio \& Le Cun, 2007). One way to represent a highly-varying function compactly (with few parameters) is through the composition of many non-linearities, i.e., with a deep architecture. For example, the parity function with d inputs requires O(2d ) examples and parameters to be represented by a Gaussian SVM (Bengio et al., 2006), O(d2 ) parameters for a one-hidden-layer neural network, O(d) parameters and units for a multi-layer network with O(log2 d) layers, and O(1) parameters with a recurrent neural network. More generally,},
   file = {C:\Users\kmc07\Zotero\storage\RAEBBY6W\Bengio et al. - 2006 - Greedy Layer-Wise Training of Deep Networks.pdf}
 }
 
@@ -243,6 +243,21 @@
   pmid = {27694992},
   keywords = {Animals,Computer Simulation,Consolidation,Long-term memory,Memory,Memory Consolidation,Models Neurological,Nerve Net,Neuronal Plasticity,Neurons,Synapses},
   file = {C:\Users\kmc07\Zotero\storage\DJIUDPI3\Benna and Fusi - 2016 - Computational principles of synaptic memory consolidation.pdf}
+}
+
+@article{bicknell2025,
+  title = {Fast and Slow Synaptic Plasticity Enables Concurrent Control and Learning},
+  author = {Bicknell, Brendan A. and Latham, Peter E.},
+  year = 2025,
+  month = mar,
+  journal = {eLife},
+  volume = {14},
+  publisher = {eLife Sciences Publications Limited},
+  doi = {10.7554/eLife.105043.1},
+  urldate = {2025-11-03},
+  abstract = {During many tasks the brain receives real-time feedback about performance. What should it do with that information, at the synaptic level, so that tasks can be performed as well as possible? The conventional answer is that it should learn by incrementally adjusting synaptic strengths. We show, however, that learning on its own is severely suboptimal. To maximize performance, synaptic plasticity should also operate on a much faster timescale -- essentially, the synaptic weights should act as a control signal. We propose a normative plasticity rule that embodies this principle. In this, fast synaptic weight changes greedily suppress downstream errors, while slow synaptic weight changes implement statistically optimal learning. This enables near-perfect task performance immediately, efficient task execution on longer timescales, and confers robustness to noise and other perturbations. Applied in a cerebellar microcircuit model, the theory explains longstanding experimental observations and makes novel testable predictions.},
+  langid = {english},
+  file = {C:\Users\kmc07\Zotero\storage\AKCAMTLC\Bicknell and Latham - 2025 - Fast and slow synaptic plasticity enables concurrent control and learning.pdf}
 }
 
 @article{bienenstock1982,
@@ -1041,7 +1056,7 @@
   issn = {0003-4851, 2168-8990},
   doi = {10.1214/aoms/1177729392},
   urldate = {2025-06-02},
-  abstract = {Let \$M(x)\$ be a regression function which has a maximum at the unknown point \${\textbackslash}theta. M(x)\$ is itself unknown to the statistician who, however, can take observations at any level \$x\$. This paper gives a scheme whereby, starting from an arbitrary point \$x\_1\$, one obtains successively \$x\_2, x\_3, {\textbackslash}cdots\$ such that \$x\_n\$ converges to \${\textbackslash}theta\$ in probability as \$n {\textbackslash}rightarrow {\textbackslash}infty\$.},
+  abstract = {Let \$M(x)\$ be a regression function which has a maximum at the unknown point \$\textbackslash theta. M(x)\$ is itself unknown to the statistician who, however, can take observations at any level \$x\$. This paper gives a scheme whereby, starting from an arbitrary point \$x\_1\$, one obtains successively \$x\_2, x\_3, \textbackslash cdots\$ such that \$x\_n\$ converges to \$\textbackslash theta\$ in probability as \$n \textbackslash rightarrow \textbackslash infty\$.},
   file = {C:\Users\kmc07\Zotero\storage\6V7KUJIQ\Kiefer and Wolfowitz - 1952 - Stochastic Estimation of the Maximum of a Regression Function.pdf}
 }
 
@@ -1213,7 +1228,7 @@
   issn = {1557-9654},
   doi = {10.1109/TIT.1982.1056489},
   urldate = {2025-06-02},
-  abstract = {It has long been realized that in pulse-code modulation (PCM), with a given ensemble of signals to handle, the quantum values should be spaced more closely in the voltage regions where the signal amplitude is more likely to fall. It has been shown by Panter and Dite that, in the limit as the number of quanta becomes infinite, the asymptotic fractional density of quanta per unit voltage should vary as the one-third power of the probability density per unit voltage of signal amplitudes. In this paper the corresponding result for any finite number of quanta is derived; that is, necessary conditions are found that the quanta and associated quantization intervals of an optimum finite quantization scheme must satisfy. The optimization criterion used is that the average quantization noise power be a minimum. It is shown that the result obtained here goes over into the Panter and Dite result as the number of quanta become large. The optimum quautization schemes for2{\textasciicircum}bquanta,b=1,2, {\textbackslash}cdots, 7, are given numerically for Gaussian and for Laplacian distribution of signal amplitudes.},
+  abstract = {It has long been realized that in pulse-code modulation (PCM), with a given ensemble of signals to handle, the quantum values should be spaced more closely in the voltage regions where the signal amplitude is more likely to fall. It has been shown by Panter and Dite that, in the limit as the number of quanta becomes infinite, the asymptotic fractional density of quanta per unit voltage should vary as the one-third power of the probability density per unit voltage of signal amplitudes. In this paper the corresponding result for any finite number of quanta is derived; that is, necessary conditions are found that the quanta and associated quantization intervals of an optimum finite quantization scheme must satisfy. The optimization criterion used is that the average quantization noise power be a minimum. It is shown that the result obtained here goes over into the Panter and Dite result as the number of quanta become large. The optimum quautization schemes for2\textasciicircum bquanta,b=1,2, \textbackslash cdots, 7, are given numerically for Gaussian and for Laplacian distribution of signal amplitudes.},
   file = {C:\Users\kmc07\Zotero\storage\BJXKLQ4S\Lloyd - 1982 - Least squares quantization in PCM.pdf}
 }
 
@@ -1925,7 +1940,7 @@
 }
 
 @misc{zotero-569,
-  title = {Reservoir {{Computing}} with {{Untrained Convolutional Neural Networks}} for {{Image Recognition}} {\textbar} {{IEEE Conference Publication}} {\textbar} {{IEEE Xplore}}},
+  title = {Reservoir {{Computing}} with {{Untrained Convolutional Neural Networks}} for {{Image Recognition}} \textbar{} {{IEEE Conference Publication}} \textbar{} {{IEEE Xplore}}},
   urldate = {2024-12-10},
   howpublished = {https://ieeexplore.ieee.org/document/8545471},
   file = {C:\Users\kmc07\Zotero\storage\I3NV782M\8545471.html}
@@ -1961,7 +1976,7 @@
 }
 
 @misc{zotero-642,
-  title = {Evolutionary {{Principles}} in {{Self-Referential Learning}}. {{On Learning}} Now to {{Learn}}: {{The Meta-Meta-Meta}}...-{{Hook}} {\textbar} {{BibSonomy}}},
+  title = {Evolutionary {{Principles}} in {{Self-Referential Learning}}. {{On Learning}} Now to {{Learn}}: {{The Meta-Meta-Meta}}...-{{Hook}} \textbar{} {{BibSonomy}}},
   urldate = {2025-01-23},
   howpublished = {https://www.bibsonomy.org/bibtex/2a96f7c3d42103ab94b13badef5d869f0/brazovayeye},
   file = {C:\Users\kmc07\Zotero\storage\EDZX8YHX\brazovayeye.html}
@@ -1970,14 +1985,14 @@
 @misc{zotero-643,
   title = {1987 {{THESIS ON LEARNING HOW TO LEARN}}, {{METALEARNING}}, {{META GENETIC PROGRAMMING}}, {{CREDIT-CONSERVING MACHINE LEARNING ECONOMY}}},
   urldate = {2025-01-23},
-  howpublished = {https://people.idsia.ch/{\textasciitilde}juergen/diploma.html},
+  howpublished = {https://people.idsia.ch/\textasciitilde juergen/diploma.html},
   file = {C:\Users\kmc07\Zotero\storage\YHDM6G78\diploma.html}
 }
 
 @misc{zotero-653,
   title = {Papers with {{Code}} - {{Discriminative Fine-Tuning Explained}}},
   urldate = {2025-02-21},
-  abstract = {Discriminative Fine-Tuning is a fine-tuning strategy that is used for ULMFiT type models. Instead of using the same learning rate for all layers of the model, discriminative fine-tuning allows us to tune each layer with different learning rates. For context, the regular stochastic gradient descent (SGD) update of a model's parameters \${\textbackslash}theta\$ at time step \$t\$ looks like the following (Ruder, 2016): \$\$ {\textbackslash}theta\_\{t\} = {\textbackslash}theta\_\{t-1\} - {\textbackslash}eta{\textbackslash}cdot{\textbackslash}nabla\_\{{\textbackslash}theta\}J{\textbackslash}left({\textbackslash}theta{\textbackslash}right)\$\$ where \${\textbackslash}eta\$ is the learning rate and \${\textbackslash}nabla\_\{{\textbackslash}theta\}J{\textbackslash}left({\textbackslash}theta{\textbackslash}right)\$ is the gradient with regard to the model's objective function. For discriminative fine-tuning, we split the parameters \${\textbackslash}theta\$ into \{\${\textbackslash}theta\_\{1\}, {\textbackslash}ldots, {\textbackslash}theta\_\{L\}\$\} where \${\textbackslash}theta\_\{l\}\$ contains the parameters of the model at the \$l\$-th layer and \$L\$ is the number of layers of the model. Similarly, we obtain \{\${\textbackslash}eta\_\{1\}, {\textbackslash}ldots, {\textbackslash}eta\_\{L\}\$\} where \${\textbackslash}theta\_\{l\}\$ where \${\textbackslash}eta\_\{l\}\$ is the learning rate of the \$l\$-th layer. The SGD update with discriminative finetuning is then: \$\$ {\textbackslash}theta\_\{t\}{\textasciicircum}\{l\} = {\textbackslash}theta\_\{t-1\}{\textasciicircum}\{l\} - {\textbackslash}eta{\textasciicircum}\{l\}{\textbackslash}cdot{\textbackslash}nabla\_\{{\textbackslash}theta{\textasciicircum}\{l\}\}J{\textbackslash}left({\textbackslash}theta{\textbackslash}right) \$\$ The authors find that empirically it worked well to first choose the learning rate \${\textbackslash}eta{\textasciicircum}\{L\}\$ of the last layer by fine-tuning only the last layer and using \${\textbackslash}eta{\textasciicircum}\{l-1\}={\textbackslash}eta{\textasciicircum}\{l\}/2.6\$ as the learning rate for lower layers.},
+  abstract = {Discriminative Fine-Tuning is a fine-tuning strategy that is used for ULMFiT type models. Instead of using the same learning rate for all layers of the model, discriminative fine-tuning allows us to tune each layer with different learning rates. For context, the regular stochastic gradient descent (SGD) update of a model's parameters \$\textbackslash theta\$ at time step \$t\$ looks like the following (Ruder, 2016): \$\$ \textbackslash theta\_\textbraceleft t\textbraceright{} = \textbackslash theta\_\textbraceleft t-1\textbraceright{} - \textbackslash eta\textbackslash cdot\textbackslash nabla\_\textbraceleft\textbackslash theta\textbraceright J\textbackslash left(\textbackslash theta\textbackslash right)\$\$ where \$\textbackslash eta\$ is the learning rate and \$\textbackslash nabla\_\textbraceleft\textbackslash theta\textbraceright J\textbackslash left(\textbackslash theta\textbackslash right)\$ is the gradient with regard to the model's objective function. For discriminative fine-tuning, we split the parameters \$\textbackslash theta\$ into \textbraceleft\$\textbackslash theta\_\textbraceleft 1\textbraceright, \textbackslash ldots, \textbackslash theta\_\textbraceleft L\textbraceright\$\textbraceright{} where \$\textbackslash theta\_\textbraceleft l\textbraceright\$ contains the parameters of the model at the \$l\$-th layer and \$L\$ is the number of layers of the model. Similarly, we obtain \textbraceleft\$\textbackslash eta\_\textbraceleft 1\textbraceright, \textbackslash ldots, \textbackslash eta\_\textbraceleft L\textbraceright\$\textbraceright{} where \$\textbackslash theta\_\textbraceleft l\textbraceright\$ where \$\textbackslash eta\_\textbraceleft l\textbraceright\$ is the learning rate of the \$l\$-th layer. The SGD update with discriminative finetuning is then: \$\$ \textbackslash theta\_\textbraceleft t\textbraceright\textasciicircum\textbraceleft l\textbraceright{} = \textbackslash theta\_\textbraceleft t-1\textbraceright\textasciicircum\textbraceleft l\textbraceright{} - \textbackslash eta\textasciicircum\textbraceleft l\textbraceright\textbackslash cdot\textbackslash nabla\_\textbraceleft\textbackslash theta\textasciicircum\textbraceleft l\textbraceright\textbraceright J\textbackslash left(\textbackslash theta\textbackslash right) \$\$ The authors find that empirically it worked well to first choose the learning rate \$\textbackslash eta\textasciicircum\textbraceleft L\textbraceright\$ of the last layer by fine-tuning only the last layer and using \$\textbackslash eta\textasciicircum\textbraceleft l-1\textbraceright =\textbackslash eta\textasciicircum\textbraceleft l\textbraceright/2.6\$ as the learning rate for lower layers.},
   howpublished = {https://paperswithcode.com/method/discriminative-fine-tuning},
   langid = {english},
   file = {C:\Users\kmc07\Zotero\storage\8BEQE79E\discriminative-fine-tuning.html}
@@ -1988,7 +2003,7 @@
 }
 
 @misc{zotero-item-705,
-  title = {Local Online Learning in Recurrent Networks with Random Feedback {\textbar} {{eLife}}},
+  title = {Local Online Learning in Recurrent Networks with Random Feedback \textbar{} {{eLife}}},
   urldate = {2025-05-19},
   howpublished = {https://elifesciences.org/articles/43299},
   file = {C:\Users\kmc07\Zotero\storage\Q8J5TCUA\43299.html}
