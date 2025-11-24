@@ -42,7 +42,7 @@ if __name__ == "__main__":
     runner_3chem_fashion_mnist = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_3chem_fashion_mnist\0"
     runner_3chem_fashion_mnist2 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_3chem_fashion_mnist2\0"
 
-    backprop = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\runner_backprop\0"
+    backprop = os.getcwd() + r"\results_runner\runner_backprop\0"
 
     normalised_dodge_5 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_5\runner_normalised_weight_3chem_new5a\0"
     normalised_non_dodge_5 = r"C:\Users\kmc07\Results-Computation-In-Biological-NNs\results_runner\mode_5\runner_normalised_3_chem\0"
@@ -185,6 +185,30 @@ if __name__ == "__main__":
     )
 
     runner_mode_9 = os.getcwd() + r"/results_runner/runner_mode_9_rand/0/"
+    runner_mode_9_5_all_ones_DFA = (
+        os.getcwd() + r"/results_runner/DFA/runner_mode_9_5_all_ones_DFA/0/"
+    )
+    runner_mode_6_scalar_NAO_7 = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_6_scalar_NAO_7/0/"
+    )
+    runner_mode_6_scalar_500_3 = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_6_scalar_500_3/0/"
+    )
+    runner_mode_6_scalar_all_ones = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_6_scalar_all_ones/0/"
+    )
+    runner_mode_6_scalar_10_same = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_6_scalar_10_same/0/"
+    )
+    runner_mode_9_scalar_10_same = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_9_scalar_10_same/0/"
+    )
+    runner_mode_9_scalar_10_same_2 = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_9_scalar_10_same_2/0/"
+    )
+    runner_mode_9_scalar_10_same_3 = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_9_scalar_10_same_3/0/"
+    )
     """runner_folders = [
         rnn_backprop_mode_4,
         rnn_fast_mode_4_2,
@@ -206,16 +230,20 @@ if __name__ == "__main__":
         # scalar_chem_5,
         # DFA_chem_5,
         # runner_mode_9,
+        # runner_mode_9_5_all_ones_DFA,
         # new_scalar_5,
         # new_scalar_5,
+        runner_mode_6_scalar_10_same,
         # DFA_chem_7,
         # runner_rosenbaum_varied,
-        new_scalar_1,
+        # new_scalar_1,
         # new_scalar_3,
-        new_scalar_3_mode_9,
+        # new_scalar_3_mode_9,
         # new_scalar_5,
-        new_scalar_5,
-        runner_mode_9_5_all_ones_diff,
+        runner_mode_9_scalar_10_same_2,
+        # runner_mode_9_scalar_10_same_3,
+        new_scalar_1,
+        # runner_mode_9_scalar_fixed_8,
     ]
     """runner_folders = [
         backprop,
@@ -251,7 +279,7 @@ if __name__ == "__main__":
         runner_3chem_fashion_mnist,
     ]"""
     # runner_folders = all_folders
-    """labels = [
+    labels = [
         "Backprop",
         # "Simple Synapse Direct Vector-Error Feedback",  # direct vector-error feedback
         # "1 Chem DFA",
@@ -262,16 +290,18 @@ if __name__ == "__main__":
         # "Scalar",
         # "Direct Vector-Error Feedback (DFA)",
         # "Direct Scalar-Error Feedback (scalar)",
+        # "$W$ and $H$ Normalised Independently - $z$ all ones",
         "$W$ and $H$ Normalised Independently",
         "$H$ Normalised using $W$",
-        "Rosenbaum FA",
-    ]"""
+        # "$H$ Normalised using $W$",
+        "1 Chem",
+    ]
     """labels = [
         "BPTT",
         "Complex Synapse",
         "RFLO",
     ]"""
-    labels = [
+    """labels = [
         "Backprop",
         "Simple Synapse",  # direct vector-error feedback
         "3 State Variables",
@@ -279,7 +309,7 @@ if __name__ == "__main__":
         "5 State Variables",
         "5 State Variables New",
         # "7 State Variables",
-    ]
+    ]"""
     """labels = [
         "Backprop 5 layers",
         "Backprop 10 layers",
@@ -304,7 +334,7 @@ if __name__ == "__main__":
 
     plt.rc("font", family="serif", size=14)
     plt.figure(figsize=(9, 5))
-    limit = 200
+    limit = 160
     for index, i in enumerate(runner_folders):
         all_files = os.listdir(i)
         all_files_int = [int(all_files[i]) for i in range(len(all_files))]
@@ -346,7 +376,7 @@ if __name__ == "__main__":
         )
         plt.scatter(x_axis, all_values, color=colors[index])
         # plt.fill_between(x_axis, 0, all_values, alpha=0.5, facecolor=colors[index])
-        x_axis = np.array(x_axis)
+        x_axis = np.array(x_axis)  # type: ignore
 
     # plt.title(r"Scalar Error Complex Synapse Performance")
     plt.xlabel("Training Samples Per Class")
@@ -359,5 +389,5 @@ if __name__ == "__main__":
     plt.ylabel("Evaluation Accuracy")
     plt.tight_layout()
     save_dir = os.getcwd() + "/rnns_graphs/"
-    # plt.savefig(save_dir + "mode_9.png")
+    plt.savefig(save_dir + "scalar_mode_comparison.png")
     plt.show()
