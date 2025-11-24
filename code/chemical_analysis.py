@@ -5,17 +5,17 @@ import numpy as np
 import torch
 
 if __name__ == "__main__":
-    results_dir = os.getcwd() + "/results_runner"
-    name = "mode_9_chem_analysis"
-    path = results_dir + r"/runner_mode_9_chem_analysis/0/250"
+    results_dir = os.getcwd() + "/results_runner_CA"
+    name = "mode_9_scalar_all_ones_4_diff_CA"
+    path = results_dir + r"/runner_mode_9_scalar_all_ones_4_diff_CA/0/250"
     chemical_autocorrelation = path + "/chemical_autocorrelation"
     all_files = os.listdir(path)
-    save_dir = os.getcwd() + "/rnns_graphs/"
+    save_dir = os.getcwd() + "/chem_analysis_graphs/"
     if not os.path.exists(save_dir + f"/{name}/"):
         os.makedirs(save_dir + f"/{name}/")
     save_dir = save_dir + f"/{name}/"
 
-    """
+    
     all_autocorr = []
     for file in all_files:
         if "chemical_autocorrelation" in file:
@@ -129,9 +129,10 @@ if __name__ == "__main__":
 
     plt.tight_layout()
     plt.savefig(save_dir + f"{name}_autocorrelation_angle.png")
-    plt.show()"""
+    #plt.show()
+    plt.close()
 
-    """all_actual_autocorr = {}
+    all_actual_autocorr = {}
     temp_data = []
     lags = [1, 2, 3, 5, 7, 10, 12, 15, 20, 25, 30, 35, 40, 45, 50]
     index = 0
@@ -155,10 +156,8 @@ if __name__ == "__main__":
             if index == 5:
                 all_actual_autocorr[current_lag] = temp_data
                 index = 0
-                temp_data = []"""
+                temp_data = []
 
-    """if not os.path.exists(save_dir + f"/{name}/"):
-        os.makedirs(save_dir + f"/{name}/")
     for lag in lags:
         fig, ax = plt.subplots(ncols=5, nrows=1, figsize=(18, 5), sharey=True)
         for i in range(5):
@@ -176,39 +175,40 @@ if __name__ == "__main__":
                 ax[i].legend()
         plt.tight_layout()
         plt.savefig(save_dir + f"actual_autocorr_lag_{lag}.png")
-        # plt.show()"""
+        # plt.show()
+        plt.close()
 
-    """pre_cuttoff = 250
-    mean_autocorr = {}
+    pre_cuttoff = 500
+    mean_autocorr = {} # type: ignore
     for lag in lags:
-        mean_autocorr[lag] = []
+        mean_autocorr[lag] = [] # type: ignore
         for layer in range(5):
             mean_value = np.mean(
-                all_actual_autocorr[str(lag)][layer][:pre_cuttoff, :], axis=0
+                all_actual_autocorr[str(lag)][layer][pre_cuttoff:, :], axis=0
             )
-            mean_autocorr[lag].append(mean_value)
+            mean_autocorr[lag].append(mean_value) # type: ignore
         mean_autocorr[lag] = np.array(mean_autocorr[lag])
 
     layer1_means = []
     for lag in lags:
         layer1_means.append(mean_autocorr[lag][0, :])
-    layer1_means = np.array(layer1_means)
+    layer1_means = np.array(layer1_means) # type: ignore
     layer2_means = []
     for lag in lags:
         layer2_means.append(mean_autocorr[lag][1, :])
-    layer2_means = np.array(layer2_means)
+    layer2_means = np.array(layer2_means) # type: ignore
     layer3_means = []
     for lag in lags:
         layer3_means.append(mean_autocorr[lag][2, :])
-    layer3_means = np.array(layer3_means)
+    layer3_means = np.array(layer3_means) # type: ignore
     layer4_means = []
     for lag in lags:
         layer4_means.append(mean_autocorr[lag][3, :])
-    layer4_means = np.array(layer4_means)
+    layer4_means = np.array(layer4_means) # type: ignore
     layer5_means = []
     for lag in lags:
         layer5_means.append(mean_autocorr[lag][4, :])
-    layer5_means = np.array(layer5_means)
+    layer5_means = np.array(layer5_means) # type: ignore
     layer_means = [
         layer1_means,
         layer2_means,
@@ -222,7 +222,7 @@ if __name__ == "__main__":
         for j in range(5):
             ax[i].plot(
                 lags,
-                layer_means[i][:, j],
+                layer_means[i][:, j], # type: ignore
                 label=labels[j],
                 color=colors[j],
             )
@@ -232,9 +232,9 @@ if __name__ == "__main__":
             ax[i].set_ylabel("Mean Autocorrelation")
             ax[i].legend()
     plt.tight_layout()
-    plt.savefig(save_dir + f"{name}_mean_autocorrelation.png")"""
+    plt.savefig(save_dir + f"{name}_mean_autocorrelation.png")
 
-    """chemical_tracking = []
+    chemical_tracking = []
     for file in all_files:
         if "chemical_tracking" in file:
             with open(path + "/" + file, "r") as f:
@@ -306,7 +306,8 @@ if __name__ == "__main__":
     ax[4, 5].set_xlabel("Parameter")
     plt.tight_layout()
     plt.savefig(save_dir + f"{name}_chemical_parameter_tracking.png")
-    plt.show()"""
+    #plt.show()
+    plt.close()
 
     Kh_tracking = []
     for file in all_files:
@@ -349,7 +350,8 @@ if __name__ == "__main__":
     ax[4, 4].set_xlabel("SV 5")
     plt.tight_layout()
     plt.savefig(save_dir + "Kh_tracking.png")
-    plt.show()
+    #plt.show()
+    plt.close()
 
     Pf_tracking = []
     for file in all_files:
@@ -393,7 +395,8 @@ if __name__ == "__main__":
     ax[4, 4].set_xlabel("SV 5")
     plt.tight_layout()
     plt.savefig(save_dir + f"{name}_Pf_tracking.png")
-    plt.show()
+    plt.close()
+    #plt.show()
 
     chemical_norms = []
     for file in all_files:
@@ -411,8 +414,8 @@ if __name__ == "__main__":
                     data = np.loadtxt(all_lines[start:end:2])
                     all_data.append(data)
                 chemical_norms.append(np.mean(all_data, axis=0))
-    # parameter_norms = []
-    """for file in all_files:
+    parameter_norms = []
+    for file in all_files:
         if "parameter_norms" in file:
             with open(path + "/" + file, "r") as f:
                 print(f"Processing {file}")
@@ -426,7 +429,7 @@ if __name__ == "__main__":
                     end = split_indices[i + 1]
                     data = np.loadtxt(all_lines[start:end:2])
                     all_data.append(data)
-                parameter_norms.append(np.mean(all_data, axis=0))"""
+                parameter_norms.append(np.mean(all_data, axis=0))
 
     limit = 800
     x_axis = np.arange(0, int(chemical_norms[0].shape[0]))
@@ -452,7 +455,8 @@ if __name__ == "__main__":
         )"""
     plt.tight_layout()
     plt.savefig(save_dir + f"{name}_chemical_norms.png")
-    plt.show()
+    #plt.show()
+    plt.close()
 
     model = torch.load(
         path + "/UpdateWeights.pth", map_location=torch.device("cpu"), weights_only=True
@@ -485,4 +489,81 @@ if __name__ == "__main__":
         )"""
     plt.tight_layout()
     plt.savefig(save_dir + f"{name}_chemical_norms_pi.png")
-    plt.show()
+    #plt.show()
+    plt.close()
+    
+
+    pf_norms = []
+    for file in all_files:
+        if "Pf_norm" in file:
+            with open(path + "/" + file, "r") as f:
+                print(f"Processing {file}")
+                all_lines = f.readlines()
+                split_indices = [
+                    i for i, line in enumerate(all_lines) if "Timestep: 1 " in line
+                ]
+                all_data = []
+                for i in range(len(split_indices) - 1):
+                    start = split_indices[i] + 1
+                    end = split_indices[i + 1]
+                    data = np.loadtxt(all_lines[start:end:2])
+                    all_data.append(data)
+                pf_norms.append(np.mean(all_data, axis=0))
+
+    limit = 800
+    x_axis = np.arange(0, int(pf_norms[0].shape[0]))
+    fig, ax = plt.subplots(ncols=5, nrows=1, figsize=(18, 5), sharey=True)
+    for i in range(5):
+        for j in range(5):
+            ax[i].plot(
+                x_axis[0:limit],
+                pf_norms[i][:, j][0:limit],
+                label=f"SV {j + 1}",
+                color=colors[j],
+            )
+        ax[i].set_title(f"Layer {i + 1}")
+        ax[i].set_xlabel("Training Samples")
+        ax[i].set_ylabel("Pf Norms")
+        if i == 0:
+            ax[i].legend()
+    plt.tight_layout()
+    plt.savefig(save_dir + f"{name}_Pf_norms.png")
+    #plt.show()
+    plt.close()
+
+    Kh_norms = []
+    for file in all_files:
+        if "Kh_norm" in file:
+            with open(path + "/" + file, "r") as f:
+                print(f"Processing {file}")
+                all_lines = f.readlines()
+                split_indices = [
+                    i for i, line in enumerate(all_lines) if "Timestep: 1 " in line
+                ]
+                all_data = []
+                for i in range(len(split_indices) - 1):
+                    start = split_indices[i] + 1
+                    end = split_indices[i + 1]
+                    data = np.loadtxt(all_lines[start:end:2])
+                    all_data.append(data)
+                Kh_norms.append(np.mean(all_data, axis=0))
+    limit = 800
+    x_axis = np.arange(0, int(Kh_norms[0].shape[0]))
+    fig, ax = plt.subplots(ncols=5, nrows=1, figsize=(18, 5), sharey=True)
+    for i in range(5):
+        for j in range(5):
+            ax[i].plot(
+                x_axis[0:limit],
+                Kh_norms[i][:, j][0:limit],
+                label=f"SV {j + 1}",
+                color=colors[j],
+            )
+        ax[i].set_title(f"Layer {i + 1}")
+        ax[i].set_xlabel("Training Samples")
+        ax[i].set_ylabel("Kh Norms")
+        if i == 0:
+            ax[i].legend()
+    plt.tight_layout()
+    plt.savefig(save_dir + f"{name}_Kh_norms.png")
+    #plt.show()
+    plt.close()
