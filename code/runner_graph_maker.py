@@ -101,6 +101,12 @@ if __name__ == "__main__":
     runner_mode_9_scalar_GPU_6 = (
         os.getcwd() + r"/results_runner/new_scalar/runner_mode_9_scalar_GPU_6/0"
     )
+    runner_mode_9_5_all_ones = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_9_scalar_all_ones_3/0"
+    )
+    runner_mode_9_5_all_ones_diff = (
+        os.getcwd() + r"/results_runner/new_scalar/runner_mode_9_5_all_ones_diff/0"
+    )
 
     DFA_chem_1 = os.getcwd() + r"/results_runner/DFA/runner_mode_6_1_chem_DFA/0"
     DFA_chem_3 = os.getcwd() + r"/results_runner/DFA/runner_mode_6_3_chem_DFA/0"
@@ -208,8 +214,8 @@ if __name__ == "__main__":
         # new_scalar_3,
         new_scalar_3_mode_9,
         # new_scalar_5,
-        runner_mode_9_scalar_fixed,
-        runner_mode_9_scalar_fixed_8,
+        new_scalar_5,
+        runner_mode_9_5_all_ones_diff,
     ]
     """runner_folders = [
         backprop,
